@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="dikadev, beli robux, robux, roblox, roblox indonesia, robux murah, jual robux, shopee, robux indonesia, roblox gift card indonesia, roblox id, topup roblox, roblox robux, roblox robux 5 hari, roblox robux gamepass, robuxmurah, robuxmurah.com" />
+    <meta property="og:type" content="website" />
+	<meta property="og:url" content="https://dikadev.xyz" />
+	<meta name="description" content="RobuxMurah adalah marketplace Robux terbaik dengan pengiriman instan, aman dan, harga juga terjangkau."/>
+	<link rel="canonical" href="https://dikadev.xyz/" />
+	<meta property="og:title" content="RobuxMurah - Beli Robux" />
+	<meta property="og:description" content="RobuxMurah adalah marketplace Robux terbaik dengan pengiriman instan, aman dan, harga juga terjangkau." />
+	<meta name="theme-color" content="#FF9900" />
+	<meta property="og:image" content="https://dikadev.xyz/public/assets/img/logo2.jpeg" />
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>DikaDev</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+        <style>
+        * {
+          box-sizing: border-box;
+        }
+        .robuxButton {
+            border: 3px solid #eee;
+            border-radius: 5px;
+            width: 50%;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .robuxButton:hover {
+            border: 3px solid #66bb6a;
+        }
+        .robuxCustom {
+            margin: auto;
+            border: 3px solid #eee;
+            border-radius: 5px;
+            width: 95%;
+            padding: 75px;
+            text-align: center;
+        }
+        .robuxCustom:hover {
+            border: 3px solid #66bb6a;
+        }
+        .customAmount {
+            width: 50%;
+            border: 3px solid #eee;
+            border-radius: 5px;
+        }
+        .customAmount:hover {
+            border: 3px solid #66bb6a;
+            border-radius: 5px;
+        }
+    </style>
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logo.svg" height="31" alt="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><span style="color:#66bb6a" class="nav-link" aria-current="page"><strong>Stock: R$<span id="stockRobux"></span></strong></span></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="pt-7">\
+        <center>
+          <div class="col-md-5 text-md-start text-center py-6">
+            <div class="container">
+              <div class="row align-items-center">
+                  <input type="hidden" id="rate">
+                  <input type="hidden" id="stock">
+                  <div class="robuxButton"  onclick="rekomended(1000)"><span><strong>R$1,000</strong></span><br><span id="robux-1000">...</span></div>
+                  <div class="robuxButton" onclick="rekomended(3000)"><span><strong>R$3,000</strong></span><br><span id="robux-3000">...</span></div>
+                  <div class="robuxButton" onclick="rekomended(5000)"><span><strong>R$5,000</strong></span><br><span id="robux-5000">...</span></div>
+                  <div class=" robuxButton" onclick="rekomended(10000)"><span><strong>R$10,000</strong></span><br><span id="robux-10000">...</span></div>
+           
+           
+                    <input class="customAmount" id="inputRobux" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  onchange="hitungRobux();"> 
+
+                    <input class="customAmount" id="totalharga">
+              </div>
+              <div class="text-center text-md-start"><a class="btn btn-danger me-3 btn-lg" onclick="history.back();return false;" href="#" role="button">BATAL</a><a class="btn btn-success me-3 btn-lg" onclick="lanjut()" role="button">LANJUT</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+            function number_format(number, decimals, dec_point, thousands_point) {
+            
+                if (number == null || !isFinite(number)) {
+                    throw new TypeError("number is not valid");
+                }
+            
+                if (!decimals) {
+                    var len = number.toString().split('.').length;
+                    decimals = len > 1 ? len : 0;
+                }
+            
+                if (!dec_point) {
+                    dec_point = '.';
+                }
+            
+                if (!thousands_point) {
+                    thousands_point = ',';
+                }
+            
+                number = parseFloat(number).toFixed(decimals);
+            
+                number = number.replace(".", dec_point);
+            
+                var splitNum = number.split(dec_point);
+                splitNum[0] = splitNum[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_point);
+                number = splitNum.join(dec_point);
+            
+                return number;
+            }
+            function rekomended(robux){
+                var stok = document.getElementById("stock").value;
+                if (robux > stok) {
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Jumlah robux tidak boleh lebih besar daripada stok robux kami'
+                    })
+                }else{
+                    if (robux == 1000){
+                        window.location.href = "pengguna?robux=" + robux + "&setharga=1428";
+                    }else if(robux == 3000){
+                        window.location.href = "pengguna?robux=" + robux + "&setharga=4286";
+                    }else if(robux == 5000){
+                        window.location.href = "pengguna?robux=" + robux + "&setharga=7143";
+                    }else if(robux == 10000){
+                        window.location.href = "pengguna?robux=" + robux + "&setharga=14286";
+                    }
+                }
+            }
+            function lanjut() {
+                var robux = document.getElementById("inputRobux").value;
+                var stok = document.getElementById("stock").value;
+                if (!robux) {
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Jumlah robux wajib diisi'
+                    })
+                //}else if(robux > stok){
+                  //  Swal.fire({
+                    //  icon: 'error',
+                      //title: 'Oops...',
+                      //text: 'Jumlah robux tidak boleh lebih besar daripada stok robux kami'
+                    //})
+                }else{
+                    window.location.href = "https://" + window.location.hostname + "/public/pengguna?robux=" + parseFloat(robux * 1.43).toFixed(0) + "&setharga=" + parseFloat(robux * 1.43).toFixed(0);
+                }
+            }
+            function hitungRobux() {
+              var robux = document.getElementById("inputRobux").value;
+              var rate = document.getElementById("rate").value;
+              var Hrobux = robux * 1.43;
+              var getPrice = Hrobux * rate;
+              var hitungRobux = robux - 1.43;
+              document.getElementById("totalharga").value = "IDR " + number_format(getPrice);
+          };
+      </script>
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="text-center py-0">
+
+        <div class="container">
+          <div class="container border-top py-3">
+            <div class="row justify-content-between">
+              <div class="col-12 col-md-auto mb-1 mb-md-0">
+                <p class="mb-0">&copy; 2022 DikaDev Inc </p>
+              </div>
+              <div class="col-12 col-md-auto">
+                <p class="mb-0">
+                  Made with<span class="fas fa-heart mx-1 text-danger"> </span>by <a class="text-decoration-none ms-1" href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+              </div>
+            </div>
+          </div>
+        </div><!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script>
+        $.ajax("../api/getStock", {
+                        method: "GET",
+                        beforeSend: function() {
+                            document.getElementById("stockRobux").innerHTML = "...";
+                        },
+                        success: (data) => {
+                        const obj = $.parseJSON(data);
+                        document.getElementById("stockRobux").innerHTML = obj['stock'].toLocaleString();
+                        var rate = obj['rate']
+                        var rbx1000 = 1000 * rate;
+                        var rbx3000 = 3000 * rate;
+                        var rbx5000 = 5000 * rate;
+                        var rbx10000 = 10000 * rate;
+                        document.getElementById("robux-1000").innerHTML = `(${rbx1000.toLocaleString()})`;
+                        document.getElementById("robux-3000").innerHTML = `(${rbx3000.toLocaleString()})`;
+                        document.getElementById("robux-5000").innerHTML = `(${rbx5000.toLocaleString()})`;
+                        document.getElementById("robux-10000").innerHTML = `(${rbx10000.toLocaleString()})`;
+                        document.getElementById("stock").value = obj['stock'];
+                        document.getElementById("rate").value = obj['rate'];
+                        }
+                    });
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>
