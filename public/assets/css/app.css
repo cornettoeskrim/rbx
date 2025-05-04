@@ -60,7 +60,23 @@ body {
   justify-content: space-around;
 }
 
-#list-rbx-hover:hover{
-    background-color: black;
-    color: white;
+#list-rbx-hover:hover {
+  background-color: black;
+  color: white;
+}
+
+#form-user {
+  background-color: white;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 575px) {
+  #quantity-row {
+    gap: 15px;
+  }
+}
+
+
+.card.mx-3{
+  border: none;
 }
