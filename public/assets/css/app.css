@@ -56,6 +56,7 @@ body {
   }
 }
 
+
 .list-rbx {
   justify-content: space-around;
   border: 1px solid #e0e0e0;
@@ -63,9 +64,17 @@ body {
 
 }
 
-.list-rbx:hover{
-    border: 1px solid #ff9900;
-    border-radius: 0.25rem;
-    color: black;
+#form-user {
+  background-color: white;
+  padding: 16px;
+}
+
+.list-rbx-hover:hover{
+    background-color: black;
+    color: white;
     
+}
+
+.card.mx-3 {
+  border:none;
 }
