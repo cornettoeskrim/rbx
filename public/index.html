@@ -232,8 +232,6 @@
           </div>
         </div>
       </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
@@ -289,22 +287,17 @@
     ></script>
     <script>
       $.ajax("../api/getStock", {
-                      method: "GET",
-                      beforeSend: function() {
-                          document.getElementById("stockRobux").innerHTML = "...";
-
-                      },
-                      success: (data) => {
-                      const obj = $.parseJSON(data);
-                      document.getElementById("stockRobux").innerHTML = obj['stock'].toLocaleString();
-                      document.getElementById("totalSold").innerHTML = obj['totalSold'].toLocaleString();
-                      document.getElementById("totalOrder").innerHTML = obj['totalOrder'].toLocaleString();
-                      var hargaRbx = 143 * 77;
-                      document.getElementById("hargaRbx").innerHTML = `${hargaRbx.toLocaleString()}`;
-
-                      }
-                  });
-  </script>
+        method: "GET",
+        beforeSend: function () {
+          document.getElementById("stockRobux").innerHTML = "...";
+        },
+        success: (data) => {
+          const obj = $.parseJSON(data);
+          document.getElementById("stockRobux").innerHTML =
+            obj["stock"].toLocaleString();
+        },
+      });
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
