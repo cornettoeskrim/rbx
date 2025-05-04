@@ -19,7 +19,7 @@ require_once dirname(__FILE__) . '/MidtransConfig.php';
 require_once dirname(__FILE__) . '/koneksi.php';
 
 // Set your Merchant Server Key
-\Midtrans\Config::$serverKey = 'Mid-server-iuiikDBP7sgcBZC4yaB6-ba1';
+\Midtrans\Config::$serverKey = '';
 // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
 \Midtrans\Config::$isProduction = true;
 // Set sanitization on (default)

@@ -171,12 +171,12 @@
                       title: 'Oops...',
                       text: 'Jumlah robux wajib diisi'
                     })
-                //}else if(robux > stok){
-                  //  Swal.fire({
-                    //  icon: 'error',
-                      //title: 'Oops...',
-                      //text: 'Jumlah robux tidak boleh lebih besar daripada stok robux kami'
-                    //})
+                }else if(robux < 25){ 
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Minimal Purchase 25 Robux'
+                    })
                 }else{
                     window.location.href = "https://" + window.location.hostname + "/public/pengguna?robux=" + parseFloat(robux * 1.43).toFixed(0) + "&setharga=" + parseFloat(robux * 1.43).toFixed(0);
                 }

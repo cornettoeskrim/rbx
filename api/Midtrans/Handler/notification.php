@@ -9,7 +9,7 @@ require_once dirname(__FILE__) . '/../../function.php';
 require_once dirname(__FILE__) . '/../../koneksi.php';
 require_once dirname(__FILE__) . '/../../MidtransConfig.php';
 Config::$isProduction = true;
-Config::$serverKey = 'Mid-server-iuiikDBP7sgcBZC4yaB6-ba1';
+Config::$serverKey = '';
 
 // non-relevant function only used for demo/example purpose
 printExampleWarningMessage();
