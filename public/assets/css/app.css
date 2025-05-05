@@ -56,25 +56,34 @@ body {
   }
 }
 
-
-.list-rbx {
-  justify-content: space-around;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.25rem;
-
-}
-
 #form-user {
   background-color: white;
   padding: 16px;
 }
 
-.list-rbx-hover:hover{
-    background-color: black;
-    color: white;
-    
+.list-rbx-hover:hover {
+  background-color: black;
+  color: white;
 }
 
 .card.mx-3 {
-  border:none;
+  border: none;
+}
+
+@media only screen and (max-width: 575px) {
+  #quantity-row {
+    gap: 15px;
+  }
+}
+
+#username-form {
+  padding: 16px;
+}
+
+
+
+@media (max-width: 576px) {
+  .custom-banner-carousel .carousel-item {
+    height: 100px;
+  }
 }
