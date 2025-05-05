@@ -80,10 +80,75 @@ body {
   padding: 16px;
 }
 
-
-
 @media (max-width: 576px) {
   .custom-banner-carousel .carousel-item {
     height: 100px;
   }
+}
+
+swiper-container {
+  width: 100%;
+  height: 300px;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-swipe {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  swiper-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  swiper-container {
+    height: 120px;
+  }
+}
+
+.card-rbx {
+  width: 80px;
+}
+
+.money-rbx {
+  width: 120px;
+}
+
+.jlh-rbx {
+  font-size: 30px;
+  color: #bca86d;
+  font-weight: bold;
+}
+
+.mny-rbx{
+  font-size: 28px;
+  color: #bca86d;
+  font-weight: bold;
+}
+
+.dec-rbx {
+  color: white;
+  font-size: 18px;
+  ont-weight: bold;
+}
+
+.polisi {
+  color: #272730;
 }
