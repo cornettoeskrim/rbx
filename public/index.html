@@ -48,6 +48,10 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link href="assets/css/app.css" rel="stylesheet" />
     <!-- <link href="assets/css/theme.css" rel="stylesheet" /> -->
     <link
@@ -107,22 +111,38 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#support">Home</a>
+                <a class="nav-link" href="#support">Beranda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#support">Pesan</a>
+                <a class="nav-link" href="#support">Cek Pesanan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#support">Contact Us</a>
+                <a class="nav-link" href="#support">Bantuan</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      \
+
       <section class="pt-3" id="hero-container">
         <div class="container">
-          <div class="row align-items-center">
+          <!-- Slider main container -->
+          <swiper-container
+            class="mySwiper"
+            autoplay="true"
+            loop="true"
+            speed="800"
+            delay="3000"
+          >
+            <swiper-slide>
+              <div class="img-wrapper">
+                <img src="assets/img/banner2.png" />
+              </div>
+            </swiper-slide>
+            <swiper-slide><img src="assets/img/banner1.png" /></swiper-slide>
+            <swiper-slide><img src="assets/img/banner3.png" /></swiper-slide>
+          </swiper-container>
+          <!-- <div class="row align-items-center">
             <div class="col-md-6 text-md-start text-start py-6">
               <span class="mb-4 fs-7 fw-bold text-white" id="hero-text"
                 >Harga Robux Termurah Dan Cepat Untuk Menemani Permainan<span
@@ -159,7 +179,7 @@
                 alt=""
               />
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -169,34 +189,65 @@
         <div class="container">
           <div class="row px-5" id="stats-container">
             <div
-              class="col-lg col-sm-12 m-2 text-center shadow main-card align-content-center"
+              class="col-lg col-sm-12 m-2 py-2 py-4 text-center shadow main-card align-content-center"
             >
-              <strong class="mb-4 fs-5 text-warning"
-                >R$ <span id="stockRobux"></span
-              ></strong>
-              <p class="mb-4 fs-2 text-white">Available Stock</p>
+              <div class="row align-items-center">
+                <div class="col">
+                  <img src="assets/img/robo.png" class="img-fluid card-rbx" />
+                </div>
+                <div class="col text-start">
+                  <div class="row"><span class="jlh-rbx">R$ 135</span></div>
+                  <div class="row">
+                    <span class="dec-rbx">Available Stock</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div
               class="col-lg col-sm-12 m-2 py-2 py-4 text-center shadow main-card align-content-center"
             >
-              <strong class="mb-4 fs-5 text-warning"
-                >Rp 10000
-                <span class="mb-4 fs-1 text-white">/100 R$</span></strong
-              >
-              <p class="mb-4 fs-2 text-white">Robux Price</p>
+              <div class="row align-items-center">
+                <div class="col">
+                  <img src="assets/img/money.png" class="img-fluid money-rbx" />
+                </div>
+                <div class="col text-start">
+                  <div class="row"><span class="mny-rbx">Rp 9.000</span></div>
+                  <div class="row">
+                    <span class="dec-rbx">Robux Price</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               class="col-lg col-sm-12 m-2 py-2 py-4 text-center shadow main-card align-content-center"
             >
-              <strong class="mb-4 fs-5 text-warning">0 R$<span></span> </strong>
-              <p class="mb-4 fs-2 text-white">Robux Sold</p>
+              <div class="row align-items-center">
+                <div class="col">
+                  <img src="assets/img/robo.png" class="img-fluid card-rbx" />
+                </div>
+                <div class="col text-start">
+                  <div class="row"><span class="jlh-rbx">0 R$</span></div>
+                  <div class="row">
+                    <span class="dec-rbx">Robux Sold</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               class="col-lg col-sm-12 m-2 py-2 py-4 text-center shadow main-card align-content-center"
             >
-              <strong class="mb-4 fs-5 text-warning"> 0 <span></span></strong>
-              <p class="mb-4 fs-2 text-white">Total Order</p>
+              <div class="row align-items-center">
+                <div class="col">
+                  <img src="assets/img/rs.png" class="img-fluid card-rbx" />
+                </div>
+                <div class="col text-start">
+                  <div class="row"><span class="jlh-rbx">0</span></div>
+                  <div class="row">
+                    <span class="dec-rbx">Total Order</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,7 +260,7 @@
               class="col-lg col-sm-12 m-2 shadow main-card align-content-center"
               id="form-user"
             >
-              <div class="card-body">
+              <div class="card-body" id="username-form">
                 <h5 class="card-title mb-3 fw-bold">Masukkan Username</h5>
                 <div class="form-container mb-3">
                   <div class="row" id="quantity-row">
@@ -238,27 +289,34 @@
               class="col-lg col-sm-12 m-2 p-3 shadow main-card align-content-center"
               id="form-user"
             >
-            <div class="card mx-3">
-              <div class="card-body">
-                <h5 class="card-title mb-3 fw-bold">Pilih Robux</h5>
-                
+              <div class="card mx-3">
+                <div class="card-body">
+                  <h5 class="card-title mb-3 fw-bold">Pilih Robux</h5>
+
                   <div class="row" id="list-rbx">
-                    <div class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover" >
+                    <div
+                      class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover"
+                    >
                       <img src="assets/img/robo.png" class="logo-rbx" /> 100
                     </div>
-                    <div class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover" >
+                    <div
+                      class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover"
+                    >
                       <img src="assets/img/robo.png" class="logo-rbx" /> 500
                     </div>
-                    <div class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover" >
+                    <div
+                      class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover"
+                    >
                       <img src="assets/img/robo.png" class="logo-rbx" /> 1.000
                     </div>
-                    <div class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover" >
+                    <div
+                      class="col col-6 col-sm-6 col-md-3 rbx-currency justify-content-center my-2 gap-1 p-2 list-rbx-hover"
+                    >
                       <img src="assets/img/robo.png" class="logo-rbx" /> 10.000
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -312,10 +370,13 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script
       src="https://kit.fontawesome.com/f9f9a5765e.js"
       crossorigin="anonymous"
     ></script>
+
     <script>
       $.ajax("../api/getStock", {
         method: "GET",
@@ -350,5 +411,106 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
       rel="stylesheet"
     />
+    <footer>
+      <section>
+        <div class="continer">
+          <!-- <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Accordion Item #1
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <strong>This is the first item's accordion body.</strong> It
+                  is shown by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
