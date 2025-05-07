@@ -262,7 +262,19 @@
               </h4>
               <a href="#">ampun bang</a>
             </div>
-
+            <div class="col-12 col-sm-12 mb-5 mt-3" id="username-form">
+              <p class="mb-3 text-white fw-bold">Username Roblox</p>
+              <input
+              
+              id="username-input-form"
+                onchange="cariPengguna()"
+                class="form-control"
+                type="text"
+                placeholder="Masukkan Username Roblox Anda"
+                aria-label="default input example"
+              />
+            </div>
+            <div class="col-12 col-sm-12" id="tampil-akun"></div>
             <div class="row mt-4">
               <div class="col d-flex gap-2" id="container-rbx-frm">
                 <div class="col-md-4 col-xxl-6" id="stk-rbx">
@@ -425,7 +437,9 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="assets/js/main.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script

@@ -76,6 +76,10 @@ function lanjut() {
   }
 }
 
+function truncate(str, n) {
+  return str.length > n ? str.substr(0, n - 1) + "..." : str;
+}
+
 function hitungRobux() {
   var robux = document.getElementById("inputRobux").value;
   var rate = document.getElementById("rate").value;
@@ -83,4 +87,49 @@ function hitungRobux() {
   var getPrice = Hrobux * rate;
   document.getElementById("totalharga").value =
     "IDR " + number_format(getPrice);
+}
+
+function cariPengguna() {
+  var namaPengguna = document.getElementById("username-input-form").value;
+  if (namaPengguna.length >= 3) {
+    const apiPengguna =
+      "../api/searchUser?keyword=" + encodeURIComponent(namaPengguna);
+    $.ajax(apiPengguna, {
+      method: "GET",
+      beforeSend: function () {
+        document.getElementById("tampil-akun").innerHTML = "";
+        // document.getElementById("text-error").innerHTML = "";
+        // document.getElementById("loading").style.display = "block";
+        // document.getElementById("text-undefined").style.display = "none";
+      },
+      success: (data) => {
+        const obj = $.parseJSON(data);
+        // if (obj["data"].length == 0) {
+        //   document.getElementById("text-error").innerHTML =
+        //     "Tidak ada kecocokan yang tersedia untuk " + obj["Keyword"];
+        //   document.getElementById("text-undefined").style.display = "block";
+        // } else {
+          for (var i = 0; i < obj["data"].length; i++) {
+            if (obj["data"][i]["Thumbnails"]) {
+              document.getElementById("tampil-akun").innerHTML += `
+                          <div onclick="Akun(${obj["data"][i]["UserId"]})">
+                            <span class='mb-6 lead text-white'>
+                              <strong>${truncate(
+                                obj["data"][i]["DisplayName"] +
+                                  " (@" +
+                                  obj["data"][i]["name"],
+                                36
+                              )})</strong>
+                              </span><br>
+                              <a href='#'><img src='${
+                                obj["data"][i]["Thumbnails"]
+                              }'></a>
+                              </div>`;
+            }
+          }
+        // }
+        // document.getElementById("loading").style.display = "none";
+      },
+    });
+  }
 }
