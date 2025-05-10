@@ -2,7 +2,16 @@
 
 body {
   font-family: Inter !important;
-  background-color: #212529 !important;
+  background-image: url("../img/bgbig.png");
+  background-color: rgba(0, 0, 0, 1);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (orientation: portrait) {
+  body {
+    background-image: url("../img/bgpot.png");
+  }
 }
 
 .main-card {
@@ -19,7 +28,7 @@ body {
 }
 
 .navbar.navbar-expand-lg {
-  background-color: #121215;
+  background-color: #161616;
 }
 
 .fa-solid.fa-bars {
@@ -131,21 +140,21 @@ swiper-slide img {
 }
 
 .jlh-rbx {
-  font-size: 30px;
-  color: #bca86d;
+  font-size: 38px;
+  color: #12f7bb;
   font-weight: bold;
 }
 
 .mny-rbx {
-  font-size: 28px;
-  color: #bca86d;
+  font-size: 26px;
+  color: #12f7bb;
   font-weight: bold;
 }
 
 .dec-rbx {
   color: white;
-  font-size: 18px;
-  ont-weight: bold;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .polisi {
@@ -198,15 +207,26 @@ swiper-slide img {
   background-color: #121215;
 }
 
-#title-form,
-#jlh-rbx-form,
-.list-rbx-hover,
-#jdl-form,
 .jdl-stk-rbx {
-  color: #baa56a;
+  color: #12f7bb;
 }
 
 #stk-border {
   border: 1px solid #393939;
   border-radius: 10px;
+}
+
+#btn-beli {
+  background-color: #12f7bb;
+}
+
+#title-form {
+  color: #12f7bb;
+}
+
+.list-rbx-hover,
+#jlh-rbx-form,
+#jdl-form,
+.jlh-uang {
+  color: #ffffff;
 }
