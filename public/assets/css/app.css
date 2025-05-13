@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script:wght@400..700&family=Fugaz+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap");
 
 body {
   font-family: Inter !important;
@@ -229,4 +230,11 @@ swiper-slide img {
 #jdl-form,
 .jlh-uang {
   color: #ffffff;
+}
+
+.coming-soon {
+  color: #12f7bb;
+  font-family: Pacifico;
+  font-size: 30px;
+  font-weight: bold;
 }
