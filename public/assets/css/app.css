@@ -4,7 +4,6 @@
 body {
   font-family: Inter !important;
   background-image: url("../img/bgbig.png");
-  background-color: rgba(0, 0, 0, 1);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -237,4 +236,29 @@ swiper-slide img {
   font-family: Pacifico;
   font-size: 30px;
   font-weight: bold;
+}
+
+footer {
+  background-color: #161616;
+  color: #12f7bb;
+}
+
+.logo-rs {
+  width: 50px;
+}
+
+@media only screen and (max-width: 575px) {
+  .contain-ft {
+    padding: 20px !important;
+  }
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ft-item {
+  color: white;
+  font-weight: none;
 }
