@@ -10,12 +10,12 @@ body {
 
 @media (orientation: portrait) {
   body {
-    background-color: #161616 !important; 
+    background-color: #161616 !important;
   }
 }
 
 .main-card {
-  background-color: #1F1b24;
+  background-color: #1f1b24;
   border-radius: 15px;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .navbar.navbar-expand-lg {
-  background-color: #1F1b24;
+  background-color: #1f1b24;
 }
 
 .fa-solid.fa-bars {
@@ -141,13 +141,13 @@ swiper-slide img {
 
 .jlh-rbx {
   font-size: 38px;
-  color: #BB86FC;
+  color: #bb86fc;
   font-weight: bold;
 }
 
 .mny-rbx {
   font-size: 38px;
-  color: #BB86FC;
+  color: #bb86fc;
   font-weight: bold;
 }
 
@@ -178,7 +178,7 @@ swiper-slide img {
 }
 
 #button-rbx {
-  background-color: #BB86FC;
+  background-color: #bb86fc;
 }
 
 @media only screen and (max-width: 767px) {
@@ -191,20 +191,20 @@ swiper-slide img {
 }
 
 #stk-rbx {
-  border: 1px solid #BB86FC;
+  border: 1px solid #bb86fc;
   border-radius: 10px;
   padding: 15px;
 }
 
 #list-rbx-form {
-  border: 1px solid #BB86FC;
+  border: 1px solid #bb86fc;
   border-radius: 10px;
   padding-top: 30px;
   padding-left: 30px;
 }
 
 #container-form {
-  background-color: #1F1b24;
+  background-color: #1f1b24;
 }
 
 .jdl-stk-rbx {
@@ -212,12 +212,12 @@ swiper-slide img {
 }
 
 #stk-border {
-  border: 1px solid #BB86FC;
+  border: 1px solid #bb86fc;
   border-radius: 10px;
 }
 
 #btn-beli {
-  background-color: #BB86FC;
+  background-color: #bb86fc;
 }
 
 #title-form {
@@ -236,4 +236,31 @@ swiper-slide img {
   font-family: Pacifico;
   font-size: 30px;
   font-weight: bold;
+}
+
+footer {
+  background-color: #1f1b24;
+  color: #12f7bb;
+  margin-top: 100px;
+}
+
+.logo-rs {
+  width: 50px;
+}
+
+@media only screen and (max-width: 575px) {
+  .contain-ft {
+    padding: 20px !important;
+  }
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #bb86fc;
+}
+
+.ft-item {
+  color: white;
+  font-weight: none;
 }
