@@ -3,20 +3,19 @@
 
 body {
   font-family: Inter !important;
-  background-image: url("../img/bgbig.png");
-  background-color: rgba(0, 0, 0, 1);
+  background-color: #161616 !important;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 @media (orientation: portrait) {
   body {
-    background-image: url("../img/bgpot.png");
+    background-color: #161616 !important; 
   }
 }
 
 .main-card {
-  background-color: #121215;
+  background-color: #1F1b24;
   border-radius: 15px;
 }
 
@@ -29,7 +28,7 @@ body {
 }
 
 .navbar.navbar-expand-lg {
-  background-color: #161616;
+  background-color: #1F1b24;
 }
 
 .fa-solid.fa-bars {
@@ -142,13 +141,13 @@ swiper-slide img {
 
 .jlh-rbx {
   font-size: 38px;
-  color: #12f7bb;
+  color: #BB86FC;
   font-weight: bold;
 }
 
 .mny-rbx {
-  font-size: 26px;
-  color: #12f7bb;
+  font-size: 38px;
+  color: #BB86FC;
   font-weight: bold;
 }
 
@@ -179,7 +178,7 @@ swiper-slide img {
 }
 
 #button-rbx {
-  background-color: #41c2ab;
+  background-color: #BB86FC;
 }
 
 @media only screen and (max-width: 767px) {
@@ -192,37 +191,37 @@ swiper-slide img {
 }
 
 #stk-rbx {
-  border: 1px solid #393939;
+  border: 1px solid #BB86FC;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
 }
 
 #list-rbx-form {
-  border: 1px solid #393939;
+  border: 1px solid #BB86FC;
   border-radius: 10px;
   padding-top: 30px;
   padding-left: 30px;
 }
 
 #container-form {
-  background-color: #121215;
+  background-color: #1F1b24;
 }
 
 .jdl-stk-rbx {
-  color: #12f7bb;
+  color: white;
 }
 
 #stk-border {
-  border: 1px solid #393939;
+  border: 1px solid #BB86FC;
   border-radius: 10px;
 }
 
 #btn-beli {
-  background-color: #12f7bb;
+  background-color: #BB86FC;
 }
 
 #title-form {
-  color: #12f7bb;
+  color: #ffffff;
 }
 
 .list-rbx-hover,

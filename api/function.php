@@ -8,17 +8,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT jumlah_robux,user_id FROM pembayaran";
+$sql = "SELECT * FROM `pembayaran` ORDER BY `pembayaran`.`jumlah_robux` DESC ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $total_sold += $row['jumlah_robux'];
-        $total_order = mysqli_num_rows($result);   
+        $lastOrder = $row['set_harga'];
+        $totalSold += $row['jumlah_robux'];
+        $totalOrder = mysqli_num_rows($result);   
      }
 }
-$sql = "SELECT cookie, rate FROM stock";
+$sql = "SELECT * FROM stock ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

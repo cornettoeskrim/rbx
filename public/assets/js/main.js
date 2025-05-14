@@ -4,7 +4,8 @@ $.ajax("../../api/getStock", {
     document.getElementById("stockRobux").innerHTML = "...";
     document.getElementById("totalSold").innerHTML = "...";
     document.getElementById("totalOrder").innerHTML = "...";
-    document.getElementById("hJual").innerHTML = "...";
+    document.getElementById("lastOrder").innerHTML = "...";
+
   },
   success: (data) => {
     const obj = $.parseJSON(data);
@@ -16,7 +17,8 @@ $.ajax("../../api/getStock", {
       obj["totalOrder"].toLocaleString();
     var rate = obj["rate"];
     var hJual = 143 * rate;
-    document.getElementById("hJual").innerHTML = hJual.toLocaleString();
+    document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
+    document.getElementById("lastOrder").innerHTML ="R$ " + obj["lastOrder"].toLocaleString();
     document.getElementById("stock").value = obj["stock"];
     document.getElementById("rate").value = obj["rate"];
   },
@@ -81,16 +83,26 @@ function truncate(str, n) {
 }
 
 function hitungRobux() {
-  var robux = document.getElementById("inputRobux").value;
-  var rate = document.getElementById("rate").value;
-  var Hrobux = robux * 1.43;
-  var getPrice = Hrobux * rate;
-  document.getElementById("totalharga").value =
-    "IDR " + number_format(getPrice);
-}
+  $.ajax("../../api/getStock", {
+    method: "GET",
+    success: (data) => {
+      const obj = $.parseJSON(data);
+      var rate = obj["rate"];
+      var robux = document.getElementById("inputRobux").value;
+      var Hrobux = robux * 1.43;
+      var getPrice = Hrobux * rate;
+      document.getElementById("totalharga").value = number_format(getPrice);
+    },
+  }
+)}
+
+ 
+
+ 
+
 
 function cariPengguna() {
-  var namaPengguna = document.getElementById("username-input-form").value;
+  var namaPengguna = document.getElementById("namapengguna").value;
   if (namaPengguna.length >= 3) {
     const apiPengguna =
       "../api/searchUser?keyword=" + encodeURIComponent(namaPengguna);
@@ -112,6 +124,7 @@ function cariPengguna() {
           for (var i = 0; i < obj["data"].length; i++) {
             if (obj["data"][i]["Thumbnails"]) {
               document.getElementById("tampil-akun").innerHTML += `
+              <Center>
                           <div onclick="Akun(${obj["data"][i]["UserId"]})">
                             <span class='mb-6 lead text-white'>
                               <strong>${truncate(
@@ -121,9 +134,7 @@ function cariPengguna() {
                                 36
                               )})</strong>
                               </span><br>
-                              <a href='#'><img src='${
-                                obj["data"][i]["Thumbnails"]
-                              }'></a>
+                              <a href='#'><img src='${obj["data"][i]["Thumbnails"]}'></a>
                               </div>`;
             }
           }

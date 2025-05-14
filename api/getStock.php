@@ -3,7 +3,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include "function.php";
     echo json_encode(
         array(
-            "stock" => requestStock($systemCookie),
+            "lastOrder" => $lastOrder,
+            "stock" => 108198,
             "rate" => $rate,
             "totalSold" => $totalSold,
             "totalOrder" => $totalOrder
