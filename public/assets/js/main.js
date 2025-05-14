@@ -1,28 +1,28 @@
-// $.ajax("../../api/getStock", {
-//   method: "GET",
-//   beforeSend: function () {
-//     document.getElementById("stockRobux").innerHTML = "...";
-//     document.getElementById("totalSold").innerHTML = "...";
-//     document.getElementById("totalOrder").innerHTML = "...";
-//     document.getElementById("lastOrder").innerHTML = "...";
+$.ajax("../../api/getStock", {
+  method: "GET",
+  beforeSend: function () {
+    document.getElementById("stockRobux").innerHTML = "...";
+    document.getElementById("totalSold").innerHTML = "...";
+    document.getElementById("totalOrder").innerHTML = "...";
+    document.getElementById("lastOrder").innerHTML = "...";
 
-//   },
-//   success: (data) => {
-//     const obj = $.parseJSON(data);
-//     document.getElementById("stockRobux").innerHTML =
-//       obj["stock"].toLocaleString();
-//     document.getElementById("totalSold").innerHTML =
-//       obj["totalSold"].toLocaleString();
-//     document.getElementById("totalOrder").innerHTML =
-//       obj["totalOrder"].toLocaleString();
-//     var rate = obj["rate"];
-//     var hJual = 143 * rate;
-//     document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
-//     document.getElementById("lastOrder").innerHTML ="R$ " + obj["lastOrder"].toLocaleString();
-//     document.getElementById("stock").value = obj["stock"];
-//     document.getElementById("rate").value = obj["rate"];
-//   },
-// });
+  },
+  success: (data) => {
+    const obj = $.parseJSON(data);
+    document.getElementById("stockRobux").innerHTML =
+      obj["stock"].toLocaleString();
+    document.getElementById("totalSold").innerHTML =
+      obj["totalSold"].toLocaleString();
+    document.getElementById("totalOrder").innerHTML =
+      obj["totalOrder"].toLocaleString();
+    var rate = obj["rate"];
+    var hJual = 143 * rate;
+    document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
+    document.getElementById("lastOrder").innerHTML ="R$ " + obj["lastOrder"].toLocaleString();
+    document.getElementById("stock").value = obj["stock"];
+    document.getElementById("rate").value = obj["rate"];
+  },
+});
 
 function number_format(number, decimals, dec_point, thousands_point) {
   if (number == null || !isFinite(number)) {
