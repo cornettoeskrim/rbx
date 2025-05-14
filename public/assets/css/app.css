@@ -289,10 +289,6 @@ footer {
   }
 }
 
-.jlh-rbx {
-  font-size: 20px;
-}
-
 @media only screen and (max-width: 430px) {
   .jlh-rbx {
     font-size: 16px !important;
@@ -340,7 +336,7 @@ footer {
   border-radius: 10px;
 }
 
-#jdl-form{
+#jdl-form {
   margin-left: 7px;
   padding-top: 10px;
 }
