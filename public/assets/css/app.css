@@ -1,21 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script:wght@400..700&family=Fugaz+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap");
-
+:root {
+  --primary-bg-color: #161616;
+  --secondary-bg-color: #1f1b24;
+  --primary-btn-color: #bb86fc;
+  --primary-text-color: white;
+}
 body {
   font-family: Inter !important;
-  background-color: #161616 !important;
+  background-color: var(--primary-bg-color) !important;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 @media (orientation: portrait) {
   body {
-    background-color: #161616 !important;
+    background-color: var(--primary-bg-color) !important;
   }
 }
 
 .main-card {
-  background-color: #1f1b24;
+  background-color: var(--secondary-bg-color);
   border-radius: 15px;
 }
 
@@ -28,7 +33,7 @@ body {
 }
 
 .navbar.navbar-expand-lg {
-  background-color: #1f1b24;
+  background-color: var(--secondary-bg-color);
 }
 
 .fa-solid.fa-bars {
@@ -85,9 +90,6 @@ body {
   }
 }
 
-#username-form {
-}
-
 @media (max-width: 576px) {
   .custom-banner-carousel .carousel-item {
     height: 100px;
@@ -141,13 +143,13 @@ swiper-slide img {
 
 .jlh-rbx {
   font-size: 38px;
-  color: #bb86fc;
+  color: var(--primary-btn-color);
   font-weight: bold;
 }
 
 .mny-rbx {
   font-size: 38px;
-  color: #bb86fc;
+  color: var(--primary-btn-color);
   font-weight: bold;
 }
 
@@ -178,7 +180,7 @@ swiper-slide img {
 }
 
 #button-rbx {
-  background-color: #bb86fc;
+  background-color: var(--primary-btn-color);
 }
 
 @media only screen and (max-width: 767px) {
@@ -190,21 +192,15 @@ swiper-slide img {
   }
 }
 
-#stk-rbx {
-  border: 1px solid #bb86fc;
-  border-radius: 10px;
-  padding: 15px;
-}
-
 #list-rbx-form {
-  border: 1px solid #bb86fc;
+  border: 1px solid var(--primary-btn-color);
   border-radius: 10px;
   padding-top: 30px;
   padding-left: 30px;
 }
 
 #container-form {
-  background-color: #1f1b24;
+  background-color: var(--secondary-bg-color);
 }
 
 .jdl-stk-rbx {
@@ -212,12 +208,12 @@ swiper-slide img {
 }
 
 #stk-border {
-  border: 1px solid #bb86fc;
+  border: 1px solid var(--primary-btn-color);
   border-radius: 10px;
 }
 
 #btn-beli {
-  background-color: #bb86fc;
+  background-color: var(--primary-btn-color);
 }
 
 #title-form {
@@ -232,14 +228,14 @@ swiper-slide img {
 }
 
 .coming-soon {
-  color: #bb86fc;
+  color: var(--primary-btn-color);
   font-family: Pacifico;
   font-size: 30px;
   font-weight: bold;
 }
 
 footer {
-  background-color: #1f1b24;
+  background-color: var(--secondary-bg-color);
   color: #12f7bb;
   margin-top: 100px;
 }
@@ -257,10 +253,83 @@ footer {
 .footer-title {
   font-size: 18px;
   font-weight: bold;
-  color: #bb86fc;
+  color: var(--primary-btn-color);
 }
 
-.ft-item {
+.ft-item,
+.form-label {
   color: white;
   font-weight: none;
+}
+
+.tipe-rbx,
+.modal-title,
+.place-name,
+.btn-close {
+  color: white;
+}
+
+.card-container {
+  border: 1px solid var(--primary-btn-color) !important;
+}
+
+#btn-bayar {
+  background-color: var(--primary-btn-color);
+  color: white;
+  font-weight: bold;
+}
+
+#total-harga {
+  color: var(--primary-btn-color);
+}
+
+@media only screen and (max-width: 991px) {
+  .form-bayar {
+    gap: 20px;
+  }
+}
+
+.jlh-rbx {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 430px) {
+  .jlh-rbx {
+    font-size: 13px !important;
+  }
+}
+
+#btn-confirm {
+  border-radius: 30px;
+  border: none;
+  background-color: var(--primary-btn-color);
+  color: white;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: var(--secondary-bg-color) !important;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.universe-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  max-height: 165px;
+}
+
+.universe-list-item.active {
+  border: 10px solid black;
+}
+
+.modal-footer {
+  border: none !important;
+}
+
+.form-bayar {
+  padding-right: 0px;
 }
