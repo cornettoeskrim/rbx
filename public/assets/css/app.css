@@ -290,12 +290,12 @@ footer {
 }
 
 .jlh-rbx {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 430px) {
   .jlh-rbx {
-    font-size: 13px !important;
+    font-size: 16px !important;
   }
 }
 
