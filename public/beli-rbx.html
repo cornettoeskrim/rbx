@@ -516,26 +516,25 @@
     <script>
       let pilihCepatRbxDom = document.querySelectorAll(".list-rbx-hover");
       let jlhRbxInputDom = document.getElementById("jlh-rbx-input");
-      let spanTotalRbxDom = document.getElementsByClassName("jlh-bl-rbx");
-      for (h = 0; h < pilihCepatRbxDom.length; h++) {
-        pilihCepatRbxDom[h].addEventListener("click", function (e) {
+      // let spanTotalRbxDom = document.getElementsByClassName("jlh-bl-rbx");
+      pilihCepatRbxDom.forEach(element => {
+        element.addEventListener("click", function (e) {
           let pilihCepatRbxDom = document.querySelectorAll(".list-rbx-hover");
-          console.log(spanTotalRbxDom);
-          console.log(spanTotalRbxDom[1].getAttributeNode("data-robux").nodeValue)
-          let valueRbx = spanTotalRbxDom.getAttributeNode("data-robux").nodeValue
-          jlhRbxInputDom.setAttribute("value", spanTotalRbxDom[0].getAttributeNode("data-robux").nodeValue);
-          
+          let spanRbxDom = (element.children.item(1))
+          // console.log(spanTotalRbxDom);
+          // console.log(spanTotalRbxDom[1].getAttributeNode("data-robux").nodeValue)
+          // let valueRbx = spanTotalRbxDom[1].getAttributeNode("data-robux").nodeValue
+          jlhRbxInputDom.setAttribute("value", spanRbxDom.getAttributeNode("data-robux").nodeValue);
           for (h = 0; h < pilihCepatRbxDom.length; h++) {
             pilihCepatRbxDom[h].classList.remove("list-rbx-selected");
           }
-
           this.classList.add("list-rbx-selected");
-          console.log(spanTotalRbxDom);
-          console.log(valueRbx);
-          console.log(valueRbx[0]);
-          console.log(jlhRbxInputDom.getAttribute("value"));
+          // console.log(spanTotalRbxDom);
+          // // console.log(valueRbx);
+          // // console.log(valueRbx[0]);
+          // console.log(jlhRbxInputDom.getAttribute("value"));
         });
-      }
+      });
     </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
