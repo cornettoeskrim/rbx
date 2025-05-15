@@ -150,6 +150,7 @@
                       type="text"
                       class="form-control ps-5"
                       style="padding-left: 130px"
+                      onblur="cariPengguna()"
                     />
                   </div>
 
@@ -158,45 +159,41 @@
                     <div class="row g-2 pt-4">
                       <div class="col-6 col-md-6 col-lg-6 col-xxl-3">
                         <div
-                          class="rounded p-2 robux-box list-rbx-hover d-flex align-items-center justify-content-center gap-2"
-                          id="stk-border"
+                          class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" id="total-rbx"
+                          <span class="fw-bold jlh-bl-rbx" data-robux="100" id="total-rbx"
                             >100 RBX</span
                           >
                         </div>
                       </div>
                       <div class="col-6 col-md-6 col-lg-6 col-xxl-3">
                         <div
-                          class="rounded p-2 robux-box list-rbx-hover d-flex align-items-center justify-content-center gap-2"
-                          id="stk-border"
+                          class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" id="total-rbx"
+                          <span class="fw-bold jlh-bl-rbx" data-robux="500" id="total-rbx"
                             >500 RBX</span
                           >
                         </div>
                       </div>
                       <div class="col-6 col-md-6 col-lg-6 col-xxl-3">
                         <div
-                          class="rounded p-2 robux-box list-rbx-hover d-flex align-items-center justify-content-center gap-2"
-                          id="stk-border"
+                          class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" id="total-rbx"
-                            >1.000 RBX</span
+                          <span class="fw-bold jlh-bl-rbx" data-robux="1000" id="total-rbx"
+                            >1000 RBX</span
                           >
                         </div>
                       </div>
                       <div class="col-6 col-md-6 col-lg-6 col-xxl-3">
                         <div
-                          class="rounded p-2 robux-box list-rbx-hover d-flex align-items-center justify-content-center gap-2"
-                          id="stk-border"
+                          class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" id="total-rbx"
-                            >5.000 RBX</span
+                          <span class="fw-bold jlh-bl-rbx" data-robux="5000" id="total-rbx"
+                            >5000 RBX</span
                           >
                         </div>
                       </div>
@@ -211,6 +208,7 @@
                         ></label
                       >
                       <input
+                        id="jlh-rbx-input"
                         type="number"
                         class="form-control"
                         placeholder="Contoh: 10000"
@@ -515,7 +513,30 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="vendors/fontawesome/all.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+      let pilihCepatRbxDom = document.querySelectorAll(".list-rbx-hover");
+      let jlhRbxInputDom = document.getElementById("jlh-rbx-input");
+      let spanTotalRbxDom = document.getElementsByClassName("jlh-bl-rbx");
+      for (h = 0; h < pilihCepatRbxDom.length; h++) {
+        pilihCepatRbxDom[h].addEventListener("click", function (e) {
+          let pilihCepatRbxDom = document.querySelectorAll(".list-rbx-hover");
+          console.log(spanTotalRbxDom);
+          console.log(spanTotalRbxDom[1].getAttributeNode("data-robux").nodeValue)
+          let valueRbx = spanTotalRbxDom.getAttributeNode("data-robux").nodeValue
+          jlhRbxInputDom.setAttribute("value", spanTotalRbxDom[0].getAttributeNode("data-robux").nodeValue);
+          
+          for (h = 0; h < pilihCepatRbxDom.length; h++) {
+            pilihCepatRbxDom[h].classList.remove("list-rbx-selected");
+          }
 
+          this.classList.add("list-rbx-selected");
+          console.log(spanTotalRbxDom);
+          console.log(valueRbx);
+          console.log(valueRbx[0]);
+          console.log(jlhRbxInputDom.getAttribute("value"));
+        });
+      }
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
       rel="stylesheet"
