@@ -19,8 +19,9 @@ $.ajax("../../api/getStock", {
     var hJual = 143 * rate;
     document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
     document.getElementById("lastOrder").innerHTML ="R$ " + obj["lastOrder"].toLocaleString();
-    document.getElementById("stock").value = obj["stock"];
-    document.getElementById("rate").value = obj["rate"];
+    document.getElementById("rate").value = obj['rate'];
+        document.getElementById("rate").value = obj['rate'];
+
   },
 });
 
@@ -52,37 +53,66 @@ function number_format(number, decimals, dec_point, thousands_point) {
 
   return number;
 }
-function lanjut() {
-  var robux = document.getElementById("inputRobux").value;
-  var stok = document.getElementById("stock").value;
-  if (!robux) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Jumlah robux wajib diisi",
-    });
-  } else if (robux < 25) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Minimal Purchase 25 Robux",
-    });
-  } else {
-    window.location.href =
-      "https://" +
-      window.location.hostname +
-      "/public/pengguna?robux=" +
-      parseFloat(robux * 1.43).toFixed(0) +
-      "&setharga=" +
-      parseFloat(robux * 1.43).toFixed(0);
-  }
-}
+//function lanjut() {
+  //var robux = document.getElementById("inputRobux").value;
+  //var stok = document.getElementById("stock").value;
+  //if (!robux) {
+    //Swal.fire({
+     // icon: "error",
+      //title: "Oops...",
+      //text: "Jumlah robux wajib diisi",
+    //});
+  //} else if (robux < 25) {
+   // Swal.fire({
+    //  icon: "error",
+    //  title: "Oops...",
+     // text: "Minimal Purchase 25 Robux",
+   // });
+  //} else {
+   // window.location.href =
+    //  "https://" +
+     // window.location.hostname +
+     // "/public/pengguna?robux=" +
+     // parseFloat(robux * 1.43).toFixed(0) +
+     // "&setharga=" +
+    //  parseFloat(robux * 1.43).toFixed(0);
+//  }
+// }
 
 
 
 function truncate(str, n) {
   return str.length > n ? str.substr(0, n - 1) + "..." : str;
 }
+
+ function rekomended(robux){
+  $.ajax("../../api/getStock", {
+    method: "GET",
+    success: (data) => {
+      const obj = $.parseJSON(data);
+      var rate = obj["rate"];
+      if (robux == 100){
+        var getPrice = 143 * rate;
+        document.getElementById("inputRobux").value = 100;
+        document.getElementById("totalharga").value = " Rp " + number_format(getPrice);
+      } else if(robux == 500){
+        var getPrice = 715 * rate;
+        document.getElementById("inputRobux").value = 500;
+        document.getElementById("totalharga").value = " Rp " + number_format(getPrice);
+      }
+      else if(robux == 1000){
+        var getPrice = 1430 * rate;
+        document.getElementById("inputRobux").value = 1000;
+        document.getElementById("totalharga").value = " Rp " + number_format(getPrice);
+      }
+      else if(robux == 5000){
+        var getPrice = 7143 * rate;
+        document.getElementById("inputRobux").value = 5000;
+        document.getElementById("totalharga").value = " Rp " + number_format(getPrice);
+      }
+    },
+  }
+)}     
 
 function hitungRobux() {
   $.ajax("../../api/getStock", {
@@ -93,7 +123,7 @@ function hitungRobux() {
       var robux = document.getElementById("inputRobux").value;
       var Hrobux = robux * 1.43;
       var getPrice = Hrobux * rate;
-      document.getElementById("totalharga").value = number_format(getPrice);
+      document.getElementById("totalharga").value = getPrice;
     },
   }
 )}

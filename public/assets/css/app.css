@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap");
 :root {
   --primary-bg-color: #161616;
-  --secondary-bg-color: #1f1b24;
+  --secondary-bg-color: #1d1d1d;
   --primary-btn-color: #bb86fc;
   --primary-text-color: white;
 }
@@ -342,8 +342,8 @@ footer {
 
 #stk-rbxx {
   border: 1px solid var(--primary-btn-color);
-  padding: 12px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 15px;
 }
 
 #jdl-form {
@@ -352,9 +352,10 @@ footer {
 }
 
 .jlh-bl-rbx {
-  font-size: 20px;
+  font-size: 15px;
   color: var(--primary-btn-color);
   font-weight: bold;
+  color: white;
 }
 
 @media only screen and (max-width: 437px) {
