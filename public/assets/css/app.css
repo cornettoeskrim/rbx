@@ -358,6 +358,24 @@ footer {
   color: white;
 }
 
+
+.account-card{
+  border-radius: 25px;
+  background-color: black;
+}
+
+.account-card img {
+  width: 35px;
+  height: 35px;
+  color: var(--primary-btn-color);
+  
+}
+
+.account-card span {
+  font-weight: bold;
+}
+
+
 @media only screen and (max-width: 437px) {
   .jlh-bl-rbx {
     font-size: 13px;

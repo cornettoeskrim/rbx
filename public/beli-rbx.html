@@ -123,7 +123,6 @@
           </div>
         </div>
       </nav>
-                  <input id="rate">
 
       <section class="pt-2">
         <div class="container py-4">
@@ -144,26 +143,44 @@
                         class="rounded-circle me-2"
                         style="width: 28px; height: 28px"
                       />
-                      <span class="text-muted">drewlesta</span>
+                      <!-- <span class="text-muted">drewlesta</span> -->
                     </div>
 
                     <input
+                    id="namapengguna"
                       type="text"
                       class="form-control ps-5"
                       style="padding-left: 130px"
                       onblur="cariPengguna()"
                     />
                   </div>
+                  <div class="" id="text-white"></div>
+                  <div class="d-flex flex-wrap gap-3 mb-4" id="tampil-akun">
+                    <!-- <div class="account-card px-3 py-2">
+                      <img class="rounded-circle me-2" src="./assets/img/avataricon.png" alt="">
+                      <span class="text-white">bijikudaliar11 @(bijikudaliar11)</span>
+                    </div>
+                    <div class="account-card px-3 py-2">
+                      <img class="rounded-circle me-2" src="./assets/img/avataricon.png" alt="">
+                      <span class="text-white">bijikudaliar11 @(bijikudaliar11)</span>
+                    </div> -->
+                   
+                  </div>
                   <div class="col-12" id="stk-rbx">
                     <h5 class="fw-bold" id="jdl-form">Pilih Jumlah Robux</h5>
                     <div class="row g-2 pt-4">
-                      
-                      <div class="col-6 col-md-6 col-lg-6 col-xxl-3">                        
+                      <div class="col-6 col-md-6 col-lg-6 col-xxl-3">
                         <div
                           class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
-                        <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                         <span class="fw-bold jlh-bl-rbx" data-robux="100" id="robux-100" onclick="rekomended(100)"> 100 RBX</span
+                          <img src="assets/img/logorbx3.png" class="logo-rbx" />
+                          <span
+                            class="fw-bold jlh-bl-rbx"
+                            data-robux="100"
+                            id="robux-100"
+                            onclick="rekomended(100)"
+                          >
+                            100 RBX</span
                           >
                         </div>
                       </div>
@@ -173,7 +190,13 @@
                           class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" data-robux="500" id="robux-500" onclick="rekomended(500)">500 RBX </span>
+                          <span
+                            class="fw-bold jlh-bl-rbx"
+                            data-robux="500"
+                            id="robux-500"
+                            onclick="rekomended(500)"
+                            >500 RBX
+                          </span>
                         </div>
                       </div>
 
@@ -182,7 +205,13 @@
                           class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" data-robux="1000"  id="robux-1000" onclick="rekomended(1000)">1000 RBX</span>
+                          <span
+                            class="fw-bold jlh-bl-rbx"
+                            data-robux="1000"
+                            id="robux-1000"
+                            onclick="rekomended(1000)"
+                            >1000 RBX</span
+                          >
                         </div>
                       </div>
                       <div class="col-6 col-md-6 col-lg-6 col-xxl-3">
@@ -190,7 +219,13 @@
                           class="rounded p-2 robux-box list-rbx list-rbx-hover d-flex align-items-center justify-content-center gap-2"
                         >
                           <img src="assets/img/logorbx3.png" class="logo-rbx" />
-                          <span class="fw-bold jlh-bl-rbx" data-robux="5000" id="robux-5000" onclick="rekomended(5000)">5000 RBX</span>
+                          <span
+                            class="fw-bold jlh-bl-rbx"
+                            data-robux="5000"
+                            id="robux-5000"
+                            onclick="rekomended(5000)"
+                            >5000 RBX</span
+                          >
                         </div>
                       </div>
                     </div>
@@ -203,13 +238,18 @@
                           >Atau Kustom Jumlah Robux</small
                         ></label
                       >
-                      <input
-                        id="inputRobux"
-                        type="number"
-                        class="form-control"
-                        placeholder="Contoh: 10000"
-                        onchange="hitungRobux();"
-                      />
+                      <div class="input-group">
+                        <span class="d-flex input-group-text" id="basic-addon1"
+                          >R$
+                        </span>
+                        <input
+                          id="inputRobux"
+                          type="number"
+                          class="form-control"
+                          placeholder="Contoh: 10000"
+                          oninput="hitungRobux();"
+                        />
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <label class="form-label">
@@ -217,11 +257,17 @@
                           >Total harga (Rp10.900/100 Robux)</small
                         ></label
                       >
-                      <input
-                        id="totalharga"
-                        class="form-control"
-                        placeholder="Contoh: 10000"
-                      />
+                      <div class="input-group">
+                        <span class="d-flex input-group-text" id="basic-addon1"
+                          >Rp
+                        </span>
+                        <input
+                          id="totalharga"
+                          class="form-control"
+                          placeholder="Contoh: 10000"
+                          readonly
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
