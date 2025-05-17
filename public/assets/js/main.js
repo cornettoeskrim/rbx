@@ -2,13 +2,17 @@ $.ajax("../../api/getStock", {
   method: "GET",
   success: (data) => {
     const obj = $.parseJSON(data);
-    document.getElementById("stockRobux").innerHTML = " R$ " + obj["stock"].toLocaleString();
-    document.getElementById("totalSold").innerHTML = " R$ " + obj["totalSold"].toLocaleString();
-    document.getElementById("totalOrder").innerHTML = obj["totalOrder"].toLocaleString();
+    document.getElementById("stockRobux").innerHTML =
+      " R$ " + obj["stock"].toLocaleString();
+    document.getElementById("totalSold").innerHTML =
+      " R$ " + obj["totalSold"].toLocaleString();
+    document.getElementById("totalOrder").innerHTML =
+      obj["totalOrder"].toLocaleString();
     var rate = obj["rate"];
     var hJual = 143 * rate;
     document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
-    document.getElementById("lastOrder").innerHTML = "R$ " + obj["lastOrder"].toLocaleString();
+    document.getElementById("lastOrder").innerHTML =
+      "R$ " + obj["lastOrder"].toLocaleString();
     document.getElementById("rate").value = obj["rate"];
     document.getElementById("rate").value = obj["rate"];
   },
@@ -155,15 +159,22 @@ function cariPengguna() {
         const obj = $.parseJSON(data);
         // console.log(obj)
         if (obj["error"]) {
-
           document.getElementById("text-white").innerHTML = obj["error"];
-          document.getElementById("text-white").classList.add("text-danger","alert", "alert-danger", "fw-bold")
+          document
+            .getElementById("text-white")
+            .classList.add("text-danger", "alert", "alert-danger", "fw-bold");
+          document
+            .getElementById("namapengguna")
+            .classList.add("is-invalid", "text-danger");
+
           // document.getElementById("text-undefined").style.display = "block";
         } else {
-
-        for (var i = 0; i < obj["data"].length; i++) {
-          if (obj["data"][i]["Thumbnails"] && obj["data"][i]["DisplayName"] === namaPengguna) {
-            document.getElementById("tampil-akun").innerHTML += `
+          for (var i = 0; i < obj["data"].length; i++) {
+            if (
+              obj["data"][i]["Thumbnails"] &&
+              obj["data"][i]["DisplayName"] === namaPengguna
+            ) {
+              document.getElementById("tampil-akun").innerHTML += `
                  <div class="account-card px-3 py-2">
                
                         <img class="rounded-circle me-2" src='${
@@ -176,8 +187,8 @@ function cariPengguna() {
                           36
                         )})</span>
                   </div>`;
+            }
           }
-        }
         }
         // document.getElementById("loading").style.display = "none";
       },
