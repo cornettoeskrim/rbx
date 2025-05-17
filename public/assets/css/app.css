@@ -207,7 +207,7 @@ swiper-slide img {
   border-radius: 10px;
 }
 
-.robux-box{
+.robux-box {
   border: 1px solid var(--primary-btn-color);
   border-radius: 10px;
 }
@@ -347,7 +347,6 @@ footer {
 }
 
 #jdl-form {
-  margin-left: 7px;
   padding-top: 10px;
 }
 
@@ -358,8 +357,7 @@ footer {
   color: white;
 }
 
-
-.account-card{
+.account-card {
   border-radius: 25px;
   background-color: black;
 }
@@ -368,13 +366,11 @@ footer {
   width: 35px;
   height: 35px;
   color: var(--primary-btn-color);
-  
 }
 
 .account-card span {
   font-weight: bold;
 }
-
 
 @media only screen and (max-width: 437px) {
   .jlh-bl-rbx {
