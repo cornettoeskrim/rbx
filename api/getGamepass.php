@@ -17,12 +17,13 @@ foreach ($getGame->data as $i => $data) {
             "isOwned" => $data->isOwned, 
             "productId" => $data->productId,
             "IsForSale" => $getForSale['IsForSale'], 
-            "thumbnails" => $getThumbnails['data'][0]['imageUrl']
+            "thumbnails" => $getThumbnails['data'][0]['imageUrl'],
+            "link" => "https://www.roblox.com/game-pass/".$data->id.""
         ]);
     }
 }
 
-echo json_encode(['data' => $arr]);
+echo json_encode(['data' => $arr],JSON_UNESCAPED_SLASHES);
 
 }else{
     die(http_response_code(403));
