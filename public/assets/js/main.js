@@ -169,6 +169,17 @@ function cariPengguna() {
 
           // document.getElementById("text-undefined").style.display = "block";
         } else {
+          document
+            .getElementById("text-white")
+            .classList.remove(
+              "text-danger",
+              "alert",
+              "alert-danger",
+              "fw-bold"
+            );
+          document
+            .getElementById("namapengguna")
+            .classList.remove("is-invalid", "text-danger");
           for (var i = 0; i < obj["data"].length; i++) {
             if (
               obj["data"][i]["Thumbnails"] &&
@@ -181,11 +192,13 @@ function cariPengguna() {
                           obj["data"][i]["Thumbnails"]
                         }' alt="">
                         <span class="text-white">${truncate(
-                          obj["data"][i]["DisplayName"] +
-                            " (@" +
-                            obj["data"][i]["name"],
-                          36
-                        )})</span>
+                          obj["data"][i]["DisplayName"]
+                        )}
+                          <span class="badge text-bg-light">
+                           ${truncate(obj["data"][i]["name"])}
+                           </span> 
+                          
+                        </span>
                   </div>`;
             }
           }
