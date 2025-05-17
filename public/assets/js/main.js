@@ -1,24 +1,14 @@
-$.ajax("http://localhost/rbx/api/getStock", {
+$.ajax("../../api/getStock", {
   method: "GET",
-  beforeSend: function () {
-    document.getElementById("stockRobux").innerHTML = "...";
-    document.getElementById("totalSold").innerHTML = "...";
-    document.getElementById("totalOrder").innerHTML = "...";
-    document.getElementById("lastOrder").innerHTML = "...";
-  },
   success: (data) => {
     const obj = $.parseJSON(data);
-    document.getElementById("stockRobux").innerHTML =
-      obj["stock"].toLocaleString();
-    document.getElementById("totalSold").innerHTML =
-      obj["totalSold"].toLocaleString();
-    document.getElementById("totalOrder").innerHTML =
-      obj["totalOrder"].toLocaleString();
+    document.getElementById("stockRobux").innerHTML = " R$ " + obj["stock"].toLocaleString();
+    document.getElementById("totalSold").innerHTML = " R$ " + obj["totalSold"].toLocaleString();
+    document.getElementById("totalOrder").innerHTML = obj["totalOrder"].toLocaleString();
     var rate = obj["rate"];
     var hJual = 143 * rate;
     document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
-    document.getElementById("lastOrder").innerHTML =
-      "R$ " + obj["lastOrder"].toLocaleString();
+    document.getElementById("lastOrder").innerHTML = "R$ " + obj["lastOrder"].toLocaleString();
     document.getElementById("rate").value = obj["rate"];
     document.getElementById("rate").value = obj["rate"];
   },
@@ -83,7 +73,7 @@ function truncate(str, n) {
 }
 
 function rekomended(robux) {
-  $.ajax("http://localhost/rbx/api/getStock", {
+  $.ajax("http://localhost/api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -118,7 +108,7 @@ function rekomended(robux) {
 }
 
 function hitungRobux() {
-  $.ajax("http://localhost/rbx/api/getStock", {
+  $.ajax("http://localhost/api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -186,22 +176,8 @@ function cariPengguna() {
                           36
                         )})</span>
                   </div>`;
-
-            // <Center>
-            //             <div onclick="Akun(${obj["data"][i]["UserId"]})">
-            //               <span class='mb-6 lead text-white'>
-            //                 <strong>${truncate(
-            //                   obj["data"][i]["DisplayName"] +
-            //                     " (@" +
-            //                     obj["data"][i]["name"],
-            //                   36
-            //                 )})</strong>
-            //                 </span><br>
-            //                 <a href='#'><img src='${obj["data"][i]["Thumbnails"]}'></a>
-            //                 </div>`;
           }
         }
-
         }
         // document.getElementById("loading").style.display = "none";
       },

@@ -226,6 +226,8 @@ swiper-slide img {
 
 #btn-beli {
   background-color: var(--primary-btn-color);
+  font-weight: bold;
+  width: 80%;
 }
 
 #title-form {
@@ -393,6 +395,6 @@ footer {
 
 .text-que {
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 }
