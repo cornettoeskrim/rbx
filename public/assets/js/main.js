@@ -1,4 +1,4 @@
-$.ajax("../../api/getStock", {
+$.ajax("../../rbx/api/getStock", {
   method: "GET",
   success: (data) => {
     const obj = $.parseJSON(data);
@@ -77,11 +77,29 @@ function truncate(str, n) {
 }
 
 function rekomended(robux) {
-  $.ajax("http://localhost/api/getStock", {
+  let listRbxDom = document.querySelectorAll(".robux-box");
+      console.log(listRbxDom);
+      for (let i = 0; i < listRbxDom.length; i++) {
+        listRbxDom[i].addEventListener("click", (e) => {
+          let listRBXDom = document.querySelectorAll(".robux-box");
+          console.log(listRBXDom);
+          for (let i = 0; i < listRBXDom.length; i++) {
+            listRBXDom[i].classList.remove("robux-box-selected");
+          }
+          listRBXDom[i].classList.add("robux-box-selected");
+          let spanRobuxDom = element.children.item(1);
+          let robux = parseInt(
+            spanRobuxDom.getAttributeNode("data-robux").nodeValue
+          );
+          console.log(robux);
+        });
+      }
+  $.ajax("../../rbx/api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
       var rate = obj["rate"];
+      console.log(robux);
       if (robux == 100) {
         var getPrice = 143 * rate;
         document.getElementById("inputRobux").value = 100;
@@ -112,7 +130,7 @@ function rekomended(robux) {
 }
 
 function hitungRobux() {
-  $.ajax("http://localhost/api/getStock", {
+  $.ajax("../../rbx/api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -142,6 +160,14 @@ function universeListItemClick(el) {
   });
 }
 
+function cariPenggunaEnter() {
+  let userFieldDom = document.getElementById("namapengguna");
+  userFieldDom.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      userFieldDom.blur();
+    }
+  });
+}
 function cariPengguna() {
   var namaPengguna = document.getElementById("namapengguna").value;
   if (namaPengguna.length >= 3) {

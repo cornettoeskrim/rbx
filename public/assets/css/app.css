@@ -204,21 +204,18 @@ swiper-slide img {
   color: white;
 }
 
-#stk-border {
-  border: 1px solid var(--primary-btn-color);
-  border-radius: 10px;
-}
+
 
 .robux-box {
   border: 1px solid var(--primary-btn-color);
   border-radius: 10px;
 }
 
-.list-rbx-hover:hover {
+.robux-box:hover {
   background-color: black;
 }
 
-.list-rbx-selected {
+.robux-box-selected {
   background-color: black;
   border: 2px solid var(--primary-btn-color);
   border-radius: 10px;
