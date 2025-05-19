@@ -1,6 +1,6 @@
 // disuruh push bg
 
-$.ajax("../../rbx/api/getStock", {
+$.ajax("../../api/getStock", {
   method: "GET",
   success: (data) => {
     const obj = $.parseJSON(data);
@@ -96,7 +96,7 @@ function rekomended(robux) {
       console.log(robux);
     });
   }
-  $.ajax("../../rbx/api/getStock", {
+  $.ajax("../../api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -132,7 +132,7 @@ function rekomended(robux) {
 }
 
 function hitungRobux() {
-  $.ajax("../../rbx/api/getStock", {
+  $.ajax("../../api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -217,8 +217,7 @@ function cariPengguna() {
             .classList.remove("is-invalid", "text-danger");
           for (var i = 0; i < obj["data"].length; i++) {
             if (
-              obj["data"][i]["Thumbnails"] &&
-              obj["data"][i]["DisplayName"] === namaPengguna
+              obj["data"][i]["Thumbnails"] 
             ) {
               document.getElementById("tampil-akun").innerHTML += `
                  <div class="account-card px-3 py-2">
