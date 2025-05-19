@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo json_encode(
         array(
             "lastOrder" => $lastOrder,
-            "stock" => 108198,
+            "stock" => 67000,
             "rate" => $rate,
             "totalSold" => $totalSold,
             "totalOrder" => $totalOrder

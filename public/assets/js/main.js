@@ -216,9 +216,7 @@ function cariPengguna() {
             .getElementById("namapengguna")
             .classList.remove("is-invalid", "text-danger");
           for (var i = 0; i < obj["data"].length; i++) {
-            if (
-              obj["data"][i]["Thumbnails"] 
-            ) {
+            if (obj["data"][i]["DisplayName"] ) {
               document.getElementById("tampil-akun").innerHTML += `
                  <div class="account-card px-3 py-2">
                
