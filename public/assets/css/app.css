@@ -406,3 +406,8 @@ footer {
 .wrap-container {
   flex: 1;
 }
+
+#spin-custom {
+  color: #bb86fc;
+  align-self: center;
+}

@@ -80,22 +80,22 @@ function truncate(str, n) {
 
 function rekomended(robux) {
   let listRbxDom = document.querySelectorAll(".robux-box");
-      console.log(listRbxDom);
-      for (let i = 0; i < listRbxDom.length; i++) {
-        listRbxDom[i].addEventListener("click", (e) => {
-          let listRBXDom = document.querySelectorAll(".robux-box");
-          console.log(listRBXDom);
-          for (let i = 0; i < listRBXDom.length; i++) {
-            listRBXDom[i].classList.remove("robux-box-selected");
-          }
-          listRBXDom[i].classList.add("robux-box-selected");
-          let spanRobuxDom = element.children.item(1);
-          let robux = parseInt(
-            spanRobuxDom.getAttributeNode("data-robux").nodeValue
-          );
-          console.log(robux);
-        });
+  console.log(listRbxDom);
+  for (let i = 0; i < listRbxDom.length; i++) {
+    listRbxDom[i].addEventListener("click", (e) => {
+      let listRBXDom = document.querySelectorAll(".robux-box");
+      console.log(listRBXDom);
+      for (let i = 0; i < listRBXDom.length; i++) {
+        listRBXDom[i].classList.remove("robux-box-selected");
       }
+      listRBXDom[i].classList.add("robux-box-selected");
+      let spanRobuxDom = element.children.item(1);
+      let robux = parseInt(
+        spanRobuxDom.getAttributeNode("data-robux").nodeValue
+      );
+      console.log(robux);
+    });
+  }
   $.ajax("../../rbx/api/getStock", {
     method: "GET",
     success: (data) => {
@@ -179,13 +179,20 @@ function cariPengguna() {
       method: "GET",
       beforeSend: function () {
         document.getElementById("tampil-akun").innerHTML = "";
+        document
+          .getElementById("spin-custom")
+          .classList.remove("visually-hidden");
+          document
+            .getElementById("text-white")
+            .classList.remove("text-danger", "alert", "alert-danger", "fw-bold");
+          document
         // document.getElementById("text-error").innerHTML = "";
         // document.getElementById("loading").style.display = "block";
         // document.getElementById("text-undefined").style.display = "none";
       },
       success: (data) => {
         const obj = $.parseJSON(data);
-        // console.log(obj)
+        document.getElementById("spin-custom").classList.add("visually-hidden");
         if (obj["error"]) {
           document.getElementById("text-white").innerHTML = obj["error"];
           document
