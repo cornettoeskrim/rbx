@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script:wght@400..700&family=Fugaz+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script:wght@400..700&family=Fugaz+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-bg-color: #161616;
+  --secondary-bg-color: #1d1d1d;
+  --primary-btn-color: #bb86fc;
+  --primary-text-color: white;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Inter !important;
+  background-color: var(--primary-bg-color) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (orientation: portrait) {
+  body {
+    background-color: var(--primary-bg-color) !important;
+  }
+}
+
+.main-card {
+  background-color: var(--secondary-bg-color);
+  border-radius: 15px;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-item {
+  font-weight: bold;
+}
+
+.navbar.navbar-expand-lg {
+  background-color: var(--secondary-bg-color);
+}
+
+.fa-solid.fa-bars {
+  color: white;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+#hero-text {
+  font-size: 30px;
+  font-family: Inter;
+}
+
+.form-container {
+  display: flex;
+  gap: 20px;
+}
+
+.logo-rbx {
+  width: 25px;
+}
+
+.rbx-currency {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+  #container-form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#form-user {
+  background-color: white;
+  padding: 16px;
+}
+
+.card.mx-3 {
+  border: none;
+}
+
+@media only screen and (max-width: 575px) {
+  #quantity-row {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-banner-carousel .carousel-item {
+    height: 100px;
+  }
+}
+
+swiper-container {
+  width: 100%;
+  height: 300px;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-swipe {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  swiper-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  swiper-container {
+    height: auto;
+  }
+}
+
+.card-rbx {
+  width: 80px;
+}
+
+.money-rbx {
+  width: 120px;
+}
+
+.jlh-rbx {
+  font-size: 38px;
+  color: var(--primary-btn-color);
+  font-weight: bold;
+}
+
+.mny-rbx {
+  font-size: 38px;
+  color: var(--primary-btn-color);
+  font-weight: bold;
+}
+
+.dec-rbx {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.polisi {
+  color: #272730;
+}
+
+#stats-container {
+  margin: 0;
+  gap: 20px;
+}
+
+#stats-form {
+  margin: 0;
+}
+
+.container-stk {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding-top: 20px;
+}
+
+#button-rbx {
+  background-color: var(--primary-btn-color);
+}
+
+@media only screen and (max-width: 767px) {
+  #list-rbx-form {
+    margin-top: 20px;
+  }
+  #container-rbx-frm {
+    flex-direction: column;
+  }
+}
+
+#list-rbx-form {
+  border: 1px solid var(--primary-btn-color);
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+#container-form {
+  background-color: var(--secondary-bg-color);
+}
+
+.jdl-stk-rbx {
+  color: white;
+}
+
+.robux-box {
+  border: 1px solid var(--primary-btn-color);
+  border-radius: 10px;
+}
+
+.robux-box:hover {
+  background-color: black;
+}
+
+.robux-box-selected {
+  background-color: black;
+  border: 2px solid var(--primary-btn-color);
+  border-radius: 10px;
+}
+
+#btn-beli {
+  background-color: var(--primary-btn-color);
+  font-weight: bold;
+  width: 80%;
+}
+
+#title-form {
+  color: #ffffff;
+}
+
+.list-rbx-hover,
+#jlh-rbx-form,
+#jdl-form,
+.jlh-uang {
+  color: #ffffff;
+}
+
+.coming-soon {
+  color: var(--primary-btn-color);
+  font-family: Pacifico;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--secondary-bg-color);
+  color: #12f7bb;
+  margin-top: 100px;
+}
+
+.logo-rs {
+  width: 50px;
+}
+
+@media only screen and (max-width: 575px) {
+  .contain-ft {
+    padding: 20px !important;
+  }
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-btn-color);
+}
+
+.ft-item,
+.form-label {
+  color: white;
+  font-weight: none;
+}
+
+.tipe-rbx,
+.modal-title,
+.place-name,
+.btn-close {
+  color: white;
+}
+
+.card-container {
+  border: 1px solid var(--primary-btn-color) !important;
+}
+
+#btn-bayar {
+  background-color: var(--primary-btn-color);
+  color: white;
+  font-weight: bold;
+}
+
+#total-harga {
+  color: var(--primary-btn-color);
+}
+
+@media only screen and (max-width: 991px) {
+  .form-bayar {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .jlh-rbx {
+    font-size: 20px !important;
+  }
+}
+
+#btn-confirm {
+  border-radius: 30px;
+  border: none;
+  background-color: var(--primary-btn-color);
+  color: white;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: var(--secondary-bg-color) !important;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.universe-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  max-height: 165px;
+}
+
+.universe-list-item.active {
+  border: 10px solid black;
+}
+
+.modal-footer {
+  border: none !important;
+}
+
+.form-bayar {
+  padding-right: 0px;
+}
+
+#stk-rbxx {
+  border: 1px solid var(--primary-btn-color);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+#jdl-form {
+  padding-top: 10px;
+}
+
+.jlh-bl-rbx {
+  font-size: 15px;
+  color: var(--primary-btn-color);
+  font-weight: bold;
+  color: white;
+}
+
+.account-card {
+  border-radius: 25px;
+  background-color: black;
+}
+
+.account-card img {
+  width: 35px;
+  height: 35px;
+  color: var(--primary-btn-color);
+}
+
+.account-card span {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 437px) {
+  .jlh-bl-rbx {
+    font-size: 13px;
+  }
+}
+
+.hero-text {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.text-logo {
+  color: var(--primary-btn-color);
+  letter-spacing: normal;
+}
+
+.text-que {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.wrap-container {
+  flex: 1;
+}
