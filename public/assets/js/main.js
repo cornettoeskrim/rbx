@@ -1,3 +1,5 @@
+// disuruh push bg
+
 $.ajax("../../rbx/api/getStock", {
   method: "GET",
   success: (data) => {
