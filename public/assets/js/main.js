@@ -1,6 +1,6 @@
 // disuruh push bg
 
-$.ajax("../../api/getStock", {
+$.ajax("api/getStock", {
   method: "GET",
   success: (data) => {
     const obj = $.parseJSON(data);
@@ -96,7 +96,7 @@ function rekomended(robux) {
       console.log(robux);
     });
   }
-  $.ajax("../../api/getStock", {
+  $.ajax("api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -132,7 +132,7 @@ function rekomended(robux) {
 }
 
 function hitungRobux() {
-  $.ajax("../../api/getStock", {
+  $.ajax("api/getStock", {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
@@ -174,7 +174,7 @@ function cariPengguna() {
   var namaPengguna = document.getElementById("namapengguna").value;
   if (namaPengguna.length >= 3) {
     const apiPengguna =
-      "../api/searchUser?keyword=" + encodeURIComponent(namaPengguna);
+      "api/searchUser?keyword=" + encodeURIComponent(namaPengguna);
     $.ajax(apiPengguna, {
       method: "GET",
       beforeSend: function () {
