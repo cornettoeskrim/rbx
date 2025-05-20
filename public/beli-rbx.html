@@ -48,10 +48,7 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+
     <link href="assets/css/app.css" rel="stylesheet" />
     <!-- <link href="assets/css/theme.css" rel="stylesheet" /> -->
     <link
@@ -60,11 +57,7 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-    ></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
@@ -158,11 +151,14 @@
                         onkeydown="cariPenggunaEnter()"
                       />
                     </div>
-                    <div class="spinner-border visually-hidden" role="status" id="spin-custom">
+                    <div
+                      class="spinner-border visually-hidden"
+                      role="status"
+                      id="spin-custom"
+                    >
                       <span class="visually-hidden">Loading...</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-3" id="tampil-akun">
-                    </div>
+                    <div class="d-flex flex-wrap gap-3" id="tampil-akun"></div>
                     <div class="" id="text-white"></div>
                     <div class="col-12" id="stk-rbx">
                       <h5 class="fw-bold" id="jdl-form">Pilih Jumlah Robux</h5>
@@ -295,99 +291,109 @@
                       <span class="tipe-rbx">Total Biaya</span>
                       <span class="fw-bold" id="total-harga">Rp0</span>
                     </div>
+
                     <button
                       class="btn w-100"
                       id="btn-bayar"
+                      data-bs-target="#exampleModalToggle"
                       data-bs-toggle="modal"
-                      data-bs-target="#payment-modal"
                     >
                       Lanjutkan Pembelian
                     </button>
-                  </div>
-                </div>
-                <div
-                  class="modal fade"
-                  id="payment-modal"
-                  tabindex="-1"
-                  aria-labelledby="payment-modalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="payment-modalLabel">
-                          Choose your place/universe
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close btn-close-white"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="universe-list">
-                          <div
-                            class="universe-list-item row mb-3 align-items-center"
-                            id="universe-list-item"
-                            data-value="1"
-                            onclick="universeListItemClick(this)"
-                          >
-                            <div class="col-3 rounded-circle text-center">
-                              <img
-                                src="https://i.pinimg.com/736x/a2/8b/5f/a28b5f04221d56802b1a54f08e914689.jpg"
-                                width="52px"
-                                height="52px"
-                              />
-                            </div>
-                            <div class="col-9">
-                              <span class="place-name">drewlesta's place</span>
+                    <div
+                      class="modal fade"
+                      id="exampleModalToggle"
+                      aria-hidden="true"
+                      aria-labelledby="exampleModalToggleLabel"
+                      tabindex="-1"
+                    >
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header justify-content-center">
+                            <h1 class="modal-title fs-5" id="modal-title">
+                              Choose Your Place
+                            </h1>
+                          </div>
+                          <div class="modal-body p-2" id="modal-container">
+                            <div
+                              class="p-2 text-white d-flex align-items-center gap-3"
+                              id="modal-contains"
+                            >
+                              <div>
+                                <img
+                                  src="./assets/img/universe.png"
+                                  class="img-fluid rounded-4"
+                                  alt="Gambar Universe"
+                                  id="universe-img"
+                                />
+                              </div>
+                              <span class="universe-name">
+                                drewlesta's Place
+                              </span>
                             </div>
                           </div>
-
-                          <div
-                            class="universe-list-item row mb-3 align-items-center"
-                            id="universe-list-item"
-                            data-value="2"
-                            onclick="universeListItemClick(this)"
-                          >
-                            <div class="col-3 rounded-circle text-center">
-                              <img
-                                src="https://i.pinimg.com/736x/a2/8b/5f/a28b5f04221d56802b1a54f08e914689.jpg"
-                                width="52px"
-                                height="52px"
-                              />
-                            </div>
-                            <div class="col-9">
-                              <span class="place-name">drewlesta's place</span>
-                            </div>
-                          </div>
-
-                          <div
-                            class="universe-list-item row mb-3 align-items-center"
-                            id="universe-list-item"
-                            data-value="3"
-                            onclick="universeListItemClick(this)"
-                          >
-                            <div class="col-3 rounded-circle text-center">
-                              <img
-                                src="https://i.pinimg.com/736x/a2/8b/5f/a28b5f04221d56802b1a54f08e914689.jpg"
-                                width="52px"
-                                height="52px"
-                              />
-                            </div>
-                            <div class="col-9">
-                              <span class="place-name">drewlesta's place</span>
-                            </div>
+                          <div class="modal-footer">
+                            <button
+                              class="btn btn-primary"
+                              data-bs-target="#exampleModalToggle2"
+                              data-bs-toggle="modal"
+                              id="btn-modal-pertama"
+                            >
+                              Confirm
+                            </button>
                           </div>
                         </div>
-                        <div class="modal-footer">
-                          <button
-                            class="btn btn-primary w-100"
-                            id="btn-confirm"
+                      </div>
+                    </div>
+                    <div
+                      class="modal fade"
+                      id="exampleModalToggle2"
+                      aria-hidden="true"
+                      aria-labelledby="exampleModalToggleLabel"
+                      tabindex="-1"
+                    >
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header justify-content-center">
+                            <h1 class="modal-title fs-5" id="gamepass-title">
+                              Buat Game Pass Senilai
+                              <span class="gamepass-nominal"> R$ 142 </span>
+                            </h1>
+                          </div>
+                          <div class="modal-body p-2" id="modal-container">
+                            <div class="video-container">
+                              <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/2raxL-VgRWM?si=XaF7vQMjZsjH84ys"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                              ></iframe>
+                            </div>
+                          </div>
+                          <div
+                            class="modal-footer-kedua d-flex justify-content-between"
                           >
-                            Confirm
-                          </button>
+                            <button
+                              class="btn btn-primary"
+                              data-bs-target="#exampleModalToggle"
+                              data-bs-toggle="modal"
+                              id="btn-modal-kedua"
+                            >
+                              Sudah Buat Game Pass
+                            </button>
+                            <button
+                              class="btn btn-primary"
+                              data-bs-target="#exampleModalToggle"
+                              data-bs-toggle="modal"
+                              id="btn-modal-kembali"
+                            >
+                              Kembali
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -504,14 +510,16 @@
       </section>
     </footer>
 
-
-   <!-- ===============================================-->
+    <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="assets/js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://kit.fontawesome.com/f9f9a5765e.js"
       crossorigin="anonymous"
@@ -520,11 +528,6 @@
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
-      integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
       crossorigin="anonymous"
     ></script>
     <link

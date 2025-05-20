@@ -41,6 +41,7 @@ body {
 
 .nav-item {
   font-weight: bold;
+  font-family: "Montserrat";
 }
 
 .navbar.navbar-expand-lg {
@@ -256,6 +257,7 @@ footer {
   background-color: var(--secondary-bg-color);
   color: #12f7bb;
   margin-top: 100px;
+  font-family: "Montserrat";
 }
 
 .logo-rs {
@@ -281,7 +283,6 @@ footer {
 }
 
 .tipe-rbx,
-.modal-title,
 .place-name,
 .btn-close {
   color: white;
@@ -334,10 +335,6 @@ footer {
   overflow-x: hidden;
   width: 100%;
   max-height: 165px;
-}
-
-.universe-list-item.active {
-  border: 10px solid black;
 }
 
 .modal-footer {
@@ -410,4 +407,144 @@ footer {
 #spin-custom {
   color: #bb86fc;
   align-self: center;
+}
+
+.modal-ecek {
+  position: fixed; /* or absolute */
+  z-index: 9999; /* higher than other elements */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-box {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  z-index: 10000; /* Even higher to stay on top of overlay if needed */
+}
+
+.modal-title {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: var(--primary-btn-color);
+}
+
+#btn-modal-pertama {
+  width: 90% !important;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary-btn-color);
+  border: none;
+}
+
+.modal-footer {
+  justify-content: center !important;
+}
+
+#universe-img {
+  width: 65px;
+}
+
+.universe-name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Montserrat";
+}
+
+#modal-container {
+  justify-items: center;
+}
+
+#modal-contains {
+  width: 90%;
+}
+
+#modal-contains:hover {
+  background-color: #272730;
+}
+
+::placeholder {
+  font-family: "Montserrat";
+}
+
+#gamepass-title {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: white;
+}
+
+.gamepass-nominal {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: var(--primary-btn-color);
+}
+
+.video-container {
+  width: 88%;
+  height: 241px;
+}
+
+@media only screen and (max-width: 591px) {
+  .video-container {
+    height: 230px;
+  }
+}
+
+@media only screen and (max-width: 503px) {
+  .video-container {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 434px) {
+  .video-container {
+    height: 200px;
+  }
+}
+
+#btn-modal-kedua {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary-btn-color);
+  border: none;
+}
+
+.modal-footer-kedua {
+  padding-left: 34px;
+  padding-right: 34px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 489px) {
+  .modal-footer-kedua {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #btn-modal-kembali {
+    width: 100% !important;
+  }
+}
+
+#btn-modal-kembali {
+  width: 45%;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary-btn-color);
+  border: none;
+}
+
+#btn-modal-kembali:hover,
+#btn-modal-pertama:hover,
+#btn-modal-kedua:hover {
+  background-color: rebeccapurple;
 }
