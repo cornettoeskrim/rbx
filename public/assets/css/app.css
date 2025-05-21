@@ -561,3 +561,105 @@ footer {
 .logo-invalid {
   width: 45%;
 }
+
+.title-history {
+  font-family: "Montserrat";
+  font-size: 30px;
+  color: var(--primary-btn-color);
+  font-weight: bold;
+}
+
+#container-order {
+  background-color: #1d1d1d;
+  margin-bottom: 20px;
+}
+
+.order-type {
+  font-size: 15px;
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+
+#invoice-order {
+  font-size: 15px;
+  font-family: "Montserrat";
+  font-weight: normal;
+}
+
+.invoice-res {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .invoice-container {
+    display: none;
+  }
+  #trans-response {
+    display: none;
+  }
+  .order-type {
+    font-size: 12px;
+  }
+  .order-container {
+    display: flex;
+    flex-direction: column !important;
+    font-size: 12px;
+    gap: 0px !important;
+  }
+  .invoice-res {
+    display: block;
+    padding-top: 5px;
+  }
+}
+
+.order-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-top: 1px;
+}
+
+#robux-detail {
+  width: 100px;
+}
+
+.detail-container {
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 10px !important;
+  flex-direction: row;
+}
+
+.nominal-robux {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.harga-robux {
+  font-family: "Montserrat";
+  font-size: 17px;
+}
+
+#harga-container {
+  font-family: "Montserrat";
+}
+
+.total-belanja {
+  font-weight: bold;
+}
+
+#jdl-order {
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+}
+
+@media only screen and (max-width: 462px) {
+  .detail-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #robux-detail {
+    width: 90px;
+  }
+}
