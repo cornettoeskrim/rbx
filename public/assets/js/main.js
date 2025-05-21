@@ -177,21 +177,20 @@ function cariPengguna() {
       "api/searchUser?keyword=" + encodeURIComponent(namaPengguna);
     $.ajax(apiPengguna, {
       method: "GET",
+
       beforeSend: function () {
         document.getElementById("tampil-akun").innerHTML = "";
         document
           .getElementById("spin-custom")
           .classList.remove("visually-hidden");
-          document
-            .getElementById("text-white")
-            .classList.remove("text-danger", "alert", "alert-danger", "fw-bold");
-          document
-        // document.getElementById("text-error").innerHTML = "";
-        // document.getElementById("loading").style.display = "block";
-        // document.getElementById("text-undefined").style.display = "none";
+        document
+          .getElementById("text-white")
+          .classList.remove("text-danger", "alert", "alert-danger", "fw-bold");
+        document;
       },
       success: (data) => {
         const obj = $.parseJSON(data);
+        console.log(obj);
         document.getElementById("spin-custom").classList.add("visually-hidden");
         if (obj["error"]) {
           document.getElementById("text-white").innerHTML = obj["error"];
@@ -201,8 +200,6 @@ function cariPengguna() {
           document
             .getElementById("namapengguna")
             .classList.add("is-invalid", "text-danger");
-
-          // document.getElementById("text-undefined").style.display = "block";
         } else {
           document
             .getElementById("text-white")
@@ -216,9 +213,11 @@ function cariPengguna() {
             .getElementById("namapengguna")
             .classList.remove("is-invalid", "text-danger");
           for (var i = 0; i < obj["data"].length; i++) {
-            if (obj["data"][i]["DisplayName"] ) {
+            if (obj["data"][i]["DisplayName"]) {
               document.getElementById("tampil-akun").innerHTML += `
-                 <div class="account-card px-3 py-2">
+                 <div class="account-card px-3 py-2" data-user-id="${
+                   obj["data"][i]["UserId"]
+                 }" onclick="getUserIdFromAccountCard()">
                
                         <img class="rounded-circle me-2" src='${
                           obj["data"][i]["Thumbnails"]
@@ -235,19 +234,62 @@ function cariPengguna() {
             }
           }
         }
-        // document.getElementById("loading").style.display = "none";
       },
     });
   }
 }
 
-function Akun(id) {
-  var parameters_get = window.location.search.substr(1);
-  window.location.href =
-    "https://" +
-    window.location.hostname +
-    "/public/pilihgame?robux=" +
-    parameters_get.split("robux=")[1] +
-    "&id=" +
-    id;
+function getUserIdFromAccountCard() {
+  let userCardDom = document.querySelector(".account-card");
+  localStorage.setItem("userId",
+    userCardDom.getAttributeNode("data-user-id").nodeValue
+  );
 }
+
+function getUserGame() {
+  let userId = localStorage.getItem("userId");
+  let placeContainerDom = document.getElementById("modal-container");
+  $.ajax(`../../rbx/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
+    method: "GET",
+    success: (data) => {
+      const obj = $.parseJSON(data);
+      if (!userId) {
+        console.log("Id user tidak ditemukan");
+      } else {
+        console.log(obj)
+        for (let i = 0; i < obj["data"].length; i++) {
+          const place = obj["data"][i];
+          console.log(place)
+          placeContainerDom.innerHTML = `<div
+                                  class="p-2 text-white d-flex align-items-center gap-3"
+                                  id="modal-contains" data-place-id="${place["id"]}" data-universe-id="${place["universeId"]}"
+                                >
+                                  <div>
+                                    <img
+                                      src="${place["thumbnails"]}"
+                                      class="img-fluid rounded-4"
+                                      alt="Gambar Universe"
+                                      id="universe-img"
+                                    />
+                                  </div>
+                                  <span class="universe-name">
+                                    ${place["name"]}
+                                  </span>
+                                </div>`;
+        }
+        console.log("ada kok datanya");
+      }
+    },
+  });
+}
+
+// function Akun(id) {
+//   var parameters_get = window.location.search.substr(1);
+//   window.location.href =
+//     "https://" +
+//     window.location.hostname +
+//     "/public/pilihgame?robux=" +
+//     parameters_get.split("robux=")[1] +
+//     "&id=" +
+//     id;
+// }
