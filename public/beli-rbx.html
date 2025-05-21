@@ -59,25 +59,6 @@
     />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <style>
-      .imgGame {
-        margin: auto;
-        width: fit-content;
-        border: 3px solid #eee;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-      }
-      .imgGame:hover {
-        border: 3px solid #66bb6a;
-      }
-      @media only screen and (max-width: 600px) {
-        .imgGame {
-          width: 100%;
-        }
-      }
-    </style>
   </head>
 
   <body>
@@ -379,7 +360,7 @@
                           >
                             <button
                               class="btn btn-primary"
-                              data-bs-target="#exampleModalToggle"
+                              data-bs-target="#exampleModalToggle3"
                               data-bs-toggle="modal"
                               id="btn-modal-kedua"
                             >
@@ -390,6 +371,42 @@
                               data-bs-target="#exampleModalToggle"
                               data-bs-toggle="modal"
                               id="btn-modal-kembali"
+                            >
+                              Kembali
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="modal fade"
+                      id="exampleModalToggle3"
+                      aria-hidden="true"
+                      aria-labelledby="exampleModalToggleLabel"
+                      tabindex="-1"
+                    >
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header justify-content-center">
+                            <h1 class="modal-title fs-5" id="gamepass-title">
+                              Game Pass Tidak Ditemukan
+                            </h1>
+                          </div>
+                          <div class="container text-center pb-3 pt-2">
+                            <img
+                              src="./assets/img/icon-invalid.png"
+                              alt="Invalid Logo"
+                              class="img-fluid logo-invalid"
+                            />
+                          </div>
+                          <div
+                            class="modal-footer-kedua d-flex justify-content-between"
+                          >
+                            <button
+                              class="btn btn-primary"
+                              data-bs-target="#exampleModalToggle"
+                              data-bs-toggle="modal"
+                              id="btn-invalid-gamepass"
                             >
                               Kembali
                             </button>

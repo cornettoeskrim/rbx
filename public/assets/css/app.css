@@ -545,6 +545,19 @@ footer {
 
 #btn-modal-kembali:hover,
 #btn-modal-pertama:hover,
-#btn-modal-kedua:hover {
+#btn-modal-kedua:hover,
+#btn-invalid-gamepass:hover {
   background-color: rebeccapurple;
+}
+
+#btn-invalid-gamepass {
+  width: 100% !important;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border: none;
+  background-color: var(--primary-btn-color);
+}
+
+.logo-invalid {
+  width: 45%;
 }
