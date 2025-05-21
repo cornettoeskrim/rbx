@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         array(
             "lastOrder" => $lastOrder,
             "stock" => 67000,
+            //"stock" => requestStock($systemCookie),
             "rate" => $rate,
             "totalSold" => $totalSold,
             "totalOrder" => $totalOrder

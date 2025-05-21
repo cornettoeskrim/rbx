@@ -4,7 +4,7 @@ include "function.php";
 $universeId = $_GET['universeId'];
 $price = $_GET['price'];
 
-$getGame = json_decode(requestCookie("https://games.roblox.com/v1/games/$universeId/game-passes?limit=100&sortOrder=Asc", $systemCookie));
+$getGame = json_decode("https://games.roblox.com/v1/games/$universeId/game-passes?limit=100&sortOrder=Asc");
 $arr = [];
 foreach ($getGame->data as $i => $data) {
     if($data->price == $price AND $data->isOwned == false) {

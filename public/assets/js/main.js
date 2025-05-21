@@ -16,7 +16,6 @@ $.ajax("api/getStock", {
     document.getElementById("lastOrder").innerHTML =
       "R$ " + obj["lastOrder"].toLocaleString();
     document.getElementById("rate").value = obj["rate"];
-    document.getElementById("rate").value = obj["rate"];
   },
 });
 
@@ -249,12 +248,12 @@ function getUserIdFromAccountCard() {
 function getUserGame() {
   let userId = localStorage.getItem("userId");
   let placeContainerDom = document.getElementById("modal-container");
-  $.ajax(`../../rbx/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
+  $.ajax(`/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
-      if (!userId) {
-        console.log("Id user tidak ditemukan");
+if (obj['data'].length == 0){
+          console.log("Id user tidak ditemukan");
       } else {
         console.log(obj)
         for (let i = 0; i < obj["data"].length; i++) {
