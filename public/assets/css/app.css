@@ -696,3 +696,49 @@ footer {
     font-size: 16px;
   }
 }
+
+.faq-title {
+  color: var(--primary-btn-color);
+  font-weight: bold;
+  font-family: "Montserrat";
+  font-size: 30px;
+}
+
+#list-faq {
+  background-color: var(--primary-btn-color);
+  font-family: "Montserrat";
+  color: white;
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-button.collapsed .custom-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-button.custom-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-button {
+  background-color: #1d1d1d !important;
+  color: var(--primary-btn-color) !important;
+  font-family: "Montserrat" !important;
+  font-weight: bold;
+}
+
+.accordion-body {
+  background-color: white !important;
+  font-family: "Montserrat";
+}
+
+.accordion-item {
+  border: none !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
