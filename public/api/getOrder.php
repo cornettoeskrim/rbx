@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $arr[] = array(
-            "UserId" => $row['user_id'],
+            "userId" => $row['user_id'],
             "name" => $name,
             "orderId" => $row['order_id'],
             "jumlahRobux" => $row['jumlah_robux'],            
@@ -45,7 +45,10 @@ if ($result->num_rows > 0) {
             "createdAt" => $row['created_at'],
         );
     }
-    echo json_encode(['Keyword' => $name, 'data' => $arr]);
+    echo json_encode([
+        'Keyword' => $name, 
+        'data' => $arr
+    ]);
 }else{
     die(http_response_code(404));
 }

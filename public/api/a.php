@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 $universeId = $_GET['universeId'];
 $price = $_GET['price'];
 
-$getGame = json_decode("https://games.roblox.com/v1/games/$universeId/game-passes?limit=100&sortOrder=Asc");
+$getGame = json_decode(file_get_contents("https://games.roblox.com/v1/games/$universeId/game-passes?limit=100&sortOrder=Asc"));
 $arr = [];
 foreach ($getGame->data as $i => $data) {
     if($data->price == $price AND $data->isOwned == false) {
@@ -21,7 +21,6 @@ foreach ($getGame->data as $i => $data) {
         ]);
     }
 }
-
 echo json_encode(['data' => $arr],JSON_UNESCAPED_SLASHES);
 
 }else{
