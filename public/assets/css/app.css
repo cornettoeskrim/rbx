@@ -663,3 +663,36 @@ footer {
     width: 90px;
   }
 }
+
+@media only screen and (max-width: 1199px) {
+  #stats-container {
+    gap: 0px;
+    justify-content: space-around;
+  }
+  #hero-container {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  #hero-container {
+    width: 48%;
+    height: 100px;
+  }
+  #stats-container {
+    column-gap: 0px !important;
+    row-gap: 10px !important;
+  }
+  .dec-rbx {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 466px) {
+  .jlh-rbx {
+    font-size: 26px;
+  }
+  .dec-rbx {
+    font-size: 16px;
+  }
+}

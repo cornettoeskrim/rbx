@@ -248,7 +248,7 @@ function getUserIdFromAccountCard() {
 function getUserGame() {
   let userId = localStorage.getItem("userId");
   let placeContainerDom = document.getElementById("modal-container");
-  $.ajax(`/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
+  $.ajax(`/rbx/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
