@@ -730,8 +730,9 @@ footer {
 }
 
 .accordion-body {
-  background-color: white !important;
+  background-color: #161616 !important;
   font-family: "Montserrat";
+  color: white;
 }
 
 .accordion-item {

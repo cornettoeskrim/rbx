@@ -1,5 +1,5 @@
 // disuruh push bg
-
+// import { fire } from 'sweetalert2';
 $.ajax("api/getStock", {
   method: "GET",
   success: (data) => {
@@ -15,6 +15,7 @@ $.ajax("api/getStock", {
     document.getElementById("hJual").innerHTML = "Rp " + hJual.toLocaleString();
     document.getElementById("lastOrder").innerHTML =
       "R$ " + obj["lastOrder"].toLocaleString();
+    document.getElementById("rate").value = obj["rate"];
     document.getElementById("rate").value = obj["rate"];
   },
 });
@@ -80,51 +81,67 @@ function truncate(str, n) {
 function rekomended(robux) {
   let listRbxDom = document.querySelectorAll(".robux-box");
   console.log(listRbxDom);
-  for (let i = 0; i < listRbxDom.length; i++) {
-    listRbxDom[i].addEventListener("click", (e) => {
-      let listRBXDom = document.querySelectorAll(".robux-box");
-      console.log(listRBXDom);
-      for (let i = 0; i < listRBXDom.length; i++) {
-        listRBXDom[i].classList.remove("robux-box-selected");
-      }
-      listRBXDom[i].classList.add("robux-box-selected");
-      let spanRobuxDom = element.children.item(1);
-      let robux = parseInt(
-        spanRobuxDom.getAttributeNode("data-robux").nodeValue
-      );
-      console.log(robux);
-    });
-  }
+  listRbxDom.forEach((element) => {
+    element.classList.remove("robux-box-selected");
+  });
+  // for (let i = 0; i < listRbxDom.length; i++) {
+  //   listRbxDom[i].addEventListener("click", (e) => {
+  //     let listRBXDom = document.querySelectorAll(".robux-box");
+  //     console.log(listRBXDom);
+  //     for (let i = 0; i < listRBXDom.length; i++) {
+  //       listRBXDom[i].classList.remove("robux-box-selected");
+  //     }
+  //     listRBXDom[i].classList.add("robux-box-selected");
+  //     let spanRobuxDom = element.children.item(1);
+  //     let robux = parseInt(
+  //       spanRobuxDom.getAttributeNode("data-robux").nodeValue
+  //     );
+  //     console.log(robux);
+  //   });
+  // }
   $.ajax("api/getStock", {
     method: "GET",
     success: (data) => {
+      let listRbxDom = document.querySelectorAll(".robux-box");
       const obj = $.parseJSON(data);
       var rate = obj["rate"];
       console.log(robux);
       if (robux == 100) {
         var getPrice = 143 * rate;
+        listRbxDom[0].classList.add("robux-box-selected");
         document.getElementById("inputRobux").value = 100;
         document.getElementById("totalharga").value = number_format(
           Math.ceil(getPrice)
         );
+        getRobuxFromInputRobux();
+        validateUsernameAndRobuxFilledAndStored();
       } else if (robux == 500) {
         var getPrice = 715 * rate;
+        listRbxDom[1].classList.add("robux-box-selected");
         document.getElementById("inputRobux").value = 500;
         document.getElementById("totalharga").value = number_format(
           Math.ceil(getPrice)
         );
+        getRobuxFromInputRobux();
+        validateUsernameAndRobuxFilledAndStored();
       } else if (robux == 1000) {
         var getPrice = 1430 * rate;
+        listRbxDom[2].classList.add("robux-box-selected");
         document.getElementById("inputRobux").value = 1000;
         document.getElementById("totalharga").value = number_format(
           Math.ceil(getPrice)
         );
+        getRobuxFromInputRobux();
+        validateUsernameAndRobuxFilledAndStored();
       } else if (robux == 5000) {
         var getPrice = 7143 * rate;
+        listRbxDom[3].classList.add("robux-box-selected");
         document.getElementById("inputRobux").value = 5000;
         document.getElementById("totalharga").value = number_format(
           Math.ceil(getPrice)
         );
+        getRobuxFromInputRobux();
+        validateUsernameAndRobuxFilledAndStored();
       }
     },
   });
@@ -142,6 +159,8 @@ function hitungRobux() {
       document.getElementById("totalharga").value = number_format(
         Math.ceil(getPrice)
       );
+      getRobuxFromInputRobux();
+      validateUsernameAndRobuxFilledAndStored();
     },
   });
 }
@@ -232,6 +251,7 @@ function cariPengguna() {
                   </div>`;
             }
           }
+          validateUsernameAndRobuxFilledAndStored();
         }
       },
     });
@@ -240,47 +260,86 @@ function cariPengguna() {
 
 function getUserIdFromAccountCard() {
   let userCardDom = document.querySelector(".account-card");
-  localStorage.setItem("userId",
+  localStorage.setItem(
+    "userId",
     userCardDom.getAttributeNode("data-user-id").nodeValue
   );
 }
 
+function getRobuxFromInputRobux() {
+  let inputRbxDom = document.getElementById("inputRobux");
+  localStorage.setItem("robux", inputRbxDom.value);
+}
+
+function validateUsernameAndRobuxFilledAndStored() {
+  let usernameDom = document.getElementById("namapengguna");
+  let inputRobuxDom = document.getElementById("inputRobux");
+  let btnBayarDom = document.getElementById("btn-bayar");
+  let userId = localStorage.getItem("userId");
+  let robux = localStorage.getItem("robux");
+  if (
+    (usernameDom.value == "" || inputRobuxDom.value == "") ||
+    (userId === "" || robux === "")
+  ) {
+    btnBayarDom.setAttribute("disabled", "");
+
+  } else {
+    btnBayarDom.removeAttribute("disabled");
+    
+  }
+}
 function getUserGame() {
   let userId = localStorage.getItem("userId");
   let placeContainerDom = document.getElementById("modal-container");
-  $.ajax(`/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
+  let btnBayarDom = document.querySelector("#btn-bayar");
+  let inputFieldDom = document.getElementById("inputRobux");
+  let modal1Dom = document.getElementById("exampleModalToggle");
+
+  $.ajax(`../../rbx/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
     method: "GET",
     success: (data) => {
       const obj = $.parseJSON(data);
-if (obj['data'].length == 0){
-          console.log("Id user tidak ditemukan");
+      console.log(inputFieldDom);
+      console.log(inputFieldDom.nodeValue);
+      console.log(inputFieldDom.value);
+      console.log(inputFieldDom.getAttribute("value"));
+      if (!userId) {
+        console.log("Id user tidak ditemukan");
       } else {
-        console.log(obj)
+        console.log(obj);
         for (let i = 0; i < obj["data"].length; i++) {
           const place = obj["data"][i];
-          console.log(place)
+          console.log(place);
           placeContainerDom.innerHTML = `<div
-                                  class="p-2 text-white d-flex align-items-center gap-3"
-                                  id="modal-contains" data-place-id="${place["id"]}" data-universe-id="${place["universeId"]}"
-                                >
-                                  <div>
-                                    <img
-                                      src="${place["thumbnails"]}"
-                                      class="img-fluid rounded-4"
-                                      alt="Gambar Universe"
-                                      id="universe-img"
-                                    />
-                                  </div>
-                                  <span class="universe-name">
-                                    ${place["name"]}
-                                  </span>
-                                </div>`;
+            class="p-2 text-white d-flex align-items-center gap-3"
+            id="modal-contains" data-place-id="${place["id"]}" data-universe-id="${place["universeId"]}"
+                                    >
+                                      <div>
+                                        <img
+                                        src="${place["thumbnails"]}"
+                                          class="img-fluid rounded-4"
+                                          alt="Gambar Universe"
+                                          id="universe-img"
+                                        />
+                                      </div>
+                                      <span class="universe-name">
+                                        ${place["name"]}
+                                      </span>
+                                      </div>`;
         }
         console.log("ada kok datanya");
       }
     },
   });
 }
+
+// document.getElementById("btn-bayar").addEventListener("click", () => {
+//   let inputFieldDom = document.getElementById("inputRobux");
+//   let btnBayarDom = document.getElementById("btn-bayar")
+//    else {
+//     getUserGame();
+//   }
+// });
 
 // function Akun(id) {
 //   var parameters_get = window.location.search.substr(1);
