@@ -146,7 +146,9 @@ function rekomended(robux) {
     },
   });
 }
-
+function storeUniverseId(universeId) {
+  localStorage.setItem("universeId", universeId);
+}
 function hitungRobux() {
   $.ajax("api/getStock", {
     method: "GET",
@@ -271,6 +273,11 @@ function getRobuxFromInputRobux() {
   localStorage.setItem("robux", inputRbxDom.value);
 }
 
+function showGamePassRobuxValue() {
+  document.getElementById("gamepass-nominal-value").innerHTML = `
+    R$${parseInt(localStorage.getItem("robux")) * 1.43}`;
+}
+
 function validateUsernameAndRobuxFilledAndStored() {
   let usernameDom = document.getElementById("namapengguna");
   let inputRobuxDom = document.getElementById("inputRobux");
@@ -278,22 +285,21 @@ function validateUsernameAndRobuxFilledAndStored() {
   let userId = localStorage.getItem("userId");
   let robux = localStorage.getItem("robux");
   if (
-    (usernameDom.value == "" || inputRobuxDom.value == "") ||
-    (userId === "" || robux === "")
+    usernameDom.value == "" ||
+    inputRobuxDom.value == "" ||
+    userId === "" ||
+    robux === ""
   ) {
     btnBayarDom.setAttribute("disabled", "");
-
   } else {
     btnBayarDom.removeAttribute("disabled");
-    
   }
 }
+
 function getUserGame() {
   let userId = localStorage.getItem("userId");
   let placeContainerDom = document.getElementById("modal-container");
-  let btnBayarDom = document.querySelector("#btn-bayar");
   let inputFieldDom = document.getElementById("inputRobux");
-  let modal1Dom = document.getElementById("exampleModalToggle");
 
   $.ajax(`../../rbx/public/api/gameUser?id=${encodeURIComponent(userId)}`, {
     method: "GET",
@@ -312,7 +318,7 @@ function getUserGame() {
           console.log(place);
           placeContainerDom.innerHTML = `<div
             class="p-2 text-white d-flex align-items-center gap-3"
-            id="modal-contains" data-place-id="${place["id"]}" data-universe-id="${place["universeId"]}"
+            id="modal-contains" data-place-id="${place["id"]}" data-universe-id="${place["universeId"]}" onclick="storeUniverseId(${place["universeId"]})"
                                     >
                                       <div>
                                         <img
@@ -332,14 +338,6 @@ function getUserGame() {
     },
   });
 }
-
-// document.getElementById("btn-bayar").addEventListener("click", () => {
-//   let inputFieldDom = document.getElementById("inputRobux");
-//   let btnBayarDom = document.getElementById("btn-bayar")
-//    else {
-//     getUserGame();
-//   }
-// });
 
 // function Akun(id) {
 //   var parameters_get = window.location.search.substr(1);
