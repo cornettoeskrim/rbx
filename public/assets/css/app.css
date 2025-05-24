@@ -743,3 +743,31 @@ footer {
   box-shadow: none !important;
   outline: none !important;
 }
+
+@media only screen and (max-width: 462px) {
+  #harga-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #id-user {
+    margin-bottom: 0px !important;
+    text-align: left !important;
+  }
+  #nama-user {
+    width: 200px !important;
+    word-wrap: break-word !important;
+  }
+}
+
+@media only screen and (max-width: 487px) {
+  #nama-user {
+    width: 120px !important;
+    text-wrap: auto !important;
+    overflow-wrap: break-word;
+  }
+}
+
+ #nama-user {
+    width: 100%;
+  }
